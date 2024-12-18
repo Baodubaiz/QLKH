@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using QLKH.VIEWS;
 
 namespace QLKH
 {
@@ -16,7 +17,7 @@ namespace QLKH
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Application.Run(new Sign_in());
         }
     }
 }

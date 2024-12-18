@@ -3,8 +3,12 @@
   "WorkspaceRootPath": "E:\\\u0110\u1ED3 \u00E1n winform\\do_an_winform\\QLKH\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{C6454C5A-1E9E-4EBF-8D2B-7836ABF10AD2}|QLKH\\QLKH.csproj|e:\\\u0111\u1ED3 \u00E1n winform\\do_an_winform\\qlkh\\qlkh\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{C6454C5A-1E9E-4EBF-8D2B-7836ABF10AD2}|QLKH\\QLKH.csproj|solutionrelative:qlkh\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{C6454C5A-1E9E-4EBF-8D2B-7836ABF10AD2}|QLKH\\QLKH.csproj|e:\\\u0111\u1ED3 \u00E1n winform\\do_an_winform\\qlkh\\qlkh\\views\\admin\\admin_view.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{C6454C5A-1E9E-4EBF-8D2B-7836ABF10AD2}|QLKH\\QLKH.csproj|solutionrelative:qlkh\\views\\admin\\admin_view.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C6454C5A-1E9E-4EBF-8D2B-7836ABF10AD2}|QLKH\\QLKH.csproj|e:\\\u0111\u1ED3 \u00E1n winform\\do_an_winform\\qlkh\\qlkh\\views\\admin\\admin_view.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C6454C5A-1E9E-4EBF-8D2B-7836ABF10AD2}|QLKH\\QLKH.csproj|solutionrelative:qlkh\\views\\admin\\admin_view.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -14,18 +18,31 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Form1.cs [Design]",
-              "DocumentMoniker": "E:\\\u0110\u1ED3 \u00E1n winform\\do_an_winform\\QLKH\\QLKH\\Form1.cs",
-              "RelativeDocumentMoniker": "QLKH\\Form1.cs",
-              "ToolTip": "E:\\\u0110\u1ED3 \u00E1n winform\\do_an_winform\\QLKH\\QLKH\\Form1.cs [Design]",
-              "RelativeToolTip": "QLKH\\Form1.cs [Design]",
+              "DocumentIndex": 1,
+              "Title": "Admin_view.cs",
+              "DocumentMoniker": "E:\\\u0110\u1ED3 \u00E1n winform\\do_an_winform\\QLKH\\QLKH\\VIEWS\\Admin\\Admin_view.cs",
+              "RelativeDocumentMoniker": "QLKH\\VIEWS\\Admin\\Admin_view.cs",
+              "ToolTip": "E:\\\u0110\u1ED3 \u00E1n winform\\do_an_winform\\QLKH\\QLKH\\VIEWS\\Admin\\Admin_view.cs",
+              "RelativeToolTip": "QLKH\\VIEWS\\Admin\\Admin_view.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-12T16:58:27.584Z",
+              "WhenOpened": "2024-12-18T09:46:53.217Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Admin_view.cs [Design]",
+              "DocumentMoniker": "E:\\\u0110\u1ED3 \u00E1n winform\\do_an_winform\\QLKH\\QLKH\\VIEWS\\Admin\\Admin_view.cs",
+              "RelativeDocumentMoniker": "QLKH\\VIEWS\\Admin\\Admin_view.cs",
+              "ToolTip": "E:\\\u0110\u1ED3 \u00E1n winform\\do_an_winform\\QLKH\\QLKH\\VIEWS\\Admin\\Admin_view.cs [Design]",
+              "RelativeToolTip": "QLKH\\VIEWS\\Admin\\Admin_view.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-18T09:44:06.371Z",
               "EditorCaption": " [Design]"
             }
           ]

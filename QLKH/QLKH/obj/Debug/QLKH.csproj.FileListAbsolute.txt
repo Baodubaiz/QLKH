@@ -1,0 +1,17 @@
+E:\Đồ án winform\do_an_winform\QLKH\QLKH\obj\Debug\QLKH.csproj.AssemblyReference.cache
+E:\Đồ án winform\do_an_winform\QLKH\QLKH\obj\Debug\QLKH.Properties.Resources.resources
+E:\Đồ án winform\do_an_winform\QLKH\QLKH\obj\Debug\QLKH.VIEWS.Sign_in.resources
+E:\Đồ án winform\do_an_winform\QLKH\QLKH\obj\Debug\QLKH.VIEWS.Sign_out.resources
+E:\Đồ án winform\do_an_winform\QLKH\QLKH\obj\Debug\QLKH.csproj.GenerateResource.cache
+E:\Đồ án winform\do_an_winform\QLKH\QLKH\obj\Debug\QLKH.csproj.CoreCompileInputs.cache
+C:\Users\ad\source\repos\do_an_winform\QLKH\QLKH\obj\Debug\QLKH.csproj.AssemblyReference.cache
+C:\Users\ad\source\repos\do_an_winform\QLKH\QLKH\obj\Debug\QLKH.Properties.Resources.resources
+C:\Users\ad\source\repos\do_an_winform\QLKH\QLKH\obj\Debug\QLKH.VIEWS.Sign_in.resources
+C:\Users\ad\source\repos\do_an_winform\QLKH\QLKH\obj\Debug\QLKH.VIEWS.Sign_out.resources
+C:\Users\ad\source\repos\do_an_winform\QLKH\QLKH\obj\Debug\QLKH.csproj.GenerateResource.cache
+C:\Users\ad\source\repos\do_an_winform\QLKH\QLKH\obj\Debug\QLKH.csproj.CoreCompileInputs.cache
+C:\Users\ad\source\repos\do_an_winform\QLKH\QLKH\bin\Debug\QLKH.exe.config
+C:\Users\ad\source\repos\do_an_winform\QLKH\QLKH\bin\Debug\QLKH.exe
+C:\Users\ad\source\repos\do_an_winform\QLKH\QLKH\bin\Debug\QLKH.pdb
+C:\Users\ad\source\repos\do_an_winform\QLKH\QLKH\obj\Debug\QLKH.exe
+C:\Users\ad\source\repos\do_an_winform\QLKH\QLKH\obj\Debug\QLKH.pdb

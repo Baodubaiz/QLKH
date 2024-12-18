@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace QLKH
+namespace QLKH.VIEWS
 {
-    public partial class Form1 : Form
+    public partial class Sign_in : Form
     {
-        public Form1()
+        public Sign_in()
         {
             InitializeComponent();
         }
