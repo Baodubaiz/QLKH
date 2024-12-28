@@ -3,20 +3,12 @@
   "WorkspaceRootPath": "E:\\\u0110\u1ED3 \u00E1n winform\\QLKH_master\\QLKH\\QLKH\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{C6454C5A-1E9E-4EBF-8D2B-7836ABF10AD2}|QLKH\\QLKH.csproj|e:\\\u0111\u1ED3 \u00E1n winform\\qlkh_master\\qlkh\\qlkh\\qlkh\\views\\frmlogin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C6454C5A-1E9E-4EBF-8D2B-7836ABF10AD2}|QLKH\\QLKH.csproj|solutionrelative:qlkh\\views\\frmlogin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{C6454C5A-1E9E-4EBF-8D2B-7836ABF10AD2}|QLKH\\QLKH.csproj|e:\\\u0111\u1ED3 \u00E1n winform\\qlkh_master\\qlkh\\qlkh\\qlkh\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C6454C5A-1E9E-4EBF-8D2B-7836ABF10AD2}|QLKH\\QLKH.csproj|solutionrelative:qlkh\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C6454C5A-1E9E-4EBF-8D2B-7836ABF10AD2}|QLKH\\QLKH.csproj|e:\\\u0111\u1ED3 \u00E1n winform\\qlkh_master\\qlkh\\qlkh\\qlkh\\views\\trangchu\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{C6454C5A-1E9E-4EBF-8D2B-7836ABF10AD2}|QLKH\\QLKH.csproj|solutionrelative:qlkh\\views\\trangchu\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C6454C5A-1E9E-4EBF-8D2B-7836ABF10AD2}|QLKH\\QLKH.csproj|e:\\\u0111\u1ED3 \u00E1n winform\\qlkh_master\\qlkh\\qlkh\\qlkh\\views\\danhsach\\dsnhanvien.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{C6454C5A-1E9E-4EBF-8D2B-7836ABF10AD2}|QLKH\\QLKH.csproj|solutionrelative:qlkh\\views\\danhsach\\dsnhanvien.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C6454C5A-1E9E-4EBF-8D2B-7836ABF10AD2}|QLKH\\QLKH.csproj|e:\\\u0111\u1ED3 \u00E1n winform\\qlkh_master\\qlkh\\qlkh\\qlkh\\views\\admin\\admin_view.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C6454C5A-1E9E-4EBF-8D2B-7836ABF10AD2}|QLKH\\QLKH.csproj|solutionrelative:qlkh\\views\\admin\\admin_view.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,57 +18,43 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Form1.cs [Design]",
-              "DocumentMoniker": "E:\\\u0110\u1ED3 \u00E1n winform\\QLKH_master\\QLKH\\QLKH\\QLKH\\VIEWS\\TrangChu\\Form1.cs",
-              "RelativeDocumentMoniker": "QLKH\\VIEWS\\TrangChu\\Form1.cs",
-              "ToolTip": "E:\\\u0110\u1ED3 \u00E1n winform\\QLKH_master\\QLKH\\QLKH\\QLKH\\VIEWS\\TrangChu\\Form1.cs [Design]",
-              "RelativeToolTip": "QLKH\\VIEWS\\TrangChu\\Form1.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-28T14:52:47.232Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "DSNhanVien.cs [Design]",
-              "DocumentMoniker": "E:\\\u0110\u1ED3 \u00E1n winform\\QLKH_master\\QLKH\\QLKH\\QLKH\\VIEWS\\DanhSach\\DSNhanVien.cs",
-              "RelativeDocumentMoniker": "QLKH\\VIEWS\\DanhSach\\DSNhanVien.cs",
-              "ToolTip": "E:\\\u0110\u1ED3 \u00E1n winform\\QLKH_master\\QLKH\\QLKH\\QLKH\\VIEWS\\DanhSach\\DSNhanVien.cs [Design]",
-              "RelativeToolTip": "QLKH\\VIEWS\\DanhSach\\DSNhanVien.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-28T14:52:38.859Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "frmLogin.cs",
+              "DocumentMoniker": "E:\\\u0110\u1ED3 \u00E1n winform\\QLKH_master\\QLKH\\QLKH\\QLKH\\VIEWS\\frmLogin.cs",
+              "RelativeDocumentMoniker": "QLKH\\VIEWS\\frmLogin.cs",
+              "ToolTip": "E:\\\u0110\u1ED3 \u00E1n winform\\QLKH_master\\QLKH\\QLKH\\QLKH\\VIEWS\\frmLogin.cs",
+              "RelativeToolTip": "QLKH\\VIEWS\\frmLogin.cs",
+              "ViewState": "AgIAACoAAAAAAAAAAAAowDsAAAA0AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-28T15:46:02.198Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
               "Title": "Program.cs",
               "DocumentMoniker": "E:\\\u0110\u1ED3 \u00E1n winform\\QLKH_master\\QLKH\\QLKH\\QLKH\\Program.cs",
               "RelativeDocumentMoniker": "QLKH\\Program.cs",
-              "ToolTip": "E:\\\u0110\u1ED3 \u00E1n winform\\QLKH_master\\QLKH\\QLKH\\QLKH\\Program.cs*",
-              "RelativeToolTip": "QLKH\\Program.cs*",
+              "ToolTip": "E:\\\u0110\u1ED3 \u00E1n winform\\QLKH_master\\QLKH\\QLKH\\QLKH\\Program.cs",
+              "RelativeToolTip": "QLKH\\Program.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAATAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-12-28T14:52:33.477Z",
               "EditorCaption": ""
-            },
+            }
+          ]
+        },
+        {
+          "DockedWidth": 1255,
+          "SelectedChildIndex": -1,
+          "Children": [
             {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Admin_view.cs",
-              "DocumentMoniker": "E:\\\u0110\u1ED3 \u00E1n winform\\QLKH_master\\QLKH\\QLKH\\QLKH\\VIEWS\\Admin\\Admin_view.cs",
-              "RelativeDocumentMoniker": "QLKH\\VIEWS\\Admin\\Admin_view.cs",
-              "ToolTip": "E:\\\u0110\u1ED3 \u00E1n winform\\QLKH_master\\QLKH\\QLKH\\QLKH\\VIEWS\\Admin\\Admin_view.cs",
-              "RelativeToolTip": "QLKH\\VIEWS\\Admin\\Admin_view.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAbAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-28T14:52:08.297Z",
-              "EditorCaption": ""
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
             }
           ]
         }

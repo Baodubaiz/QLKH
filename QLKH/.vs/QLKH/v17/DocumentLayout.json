@@ -24,10 +24,20 @@
               "RelativeDocumentMoniker": "QLKH\\Program.cs",
               "ToolTip": "E:\\\u0110\u1ED3 \u00E1n winform\\QLKH_master\\QLKH\\QLKH\\QLKH\\Program.cs",
               "RelativeToolTip": "QLKH\\Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAA1AAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAATAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-12-28T14:52:33.477Z",
               "EditorCaption": ""
+            }
+          ]
+        },
+        {
+          "DockedWidth": 1255,
+          "SelectedChildIndex": -1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
             }
           ]
         }

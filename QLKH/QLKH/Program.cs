@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using QLKH.VIEWS;
-
+using QLKH.VIEWS.TrangChu;
+using QLKH.VIEWS.DanhSach;
 namespace QLKH
 {
     internal static class Program
@@ -17,7 +17,7 @@ namespace QLKH
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Sign_in());
+            Application.Run(new frmLogin());
         }
     }
 }
