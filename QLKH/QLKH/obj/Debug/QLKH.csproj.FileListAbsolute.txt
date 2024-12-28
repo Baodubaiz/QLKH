@@ -15,3 +15,16 @@ C:\Users\ad\source\repos\do_an_winform\QLKH\QLKH\bin\Debug\QLKH.exe
 C:\Users\ad\source\repos\do_an_winform\QLKH\QLKH\bin\Debug\QLKH.pdb
 C:\Users\ad\source\repos\do_an_winform\QLKH\QLKH\obj\Debug\QLKH.exe
 C:\Users\ad\source\repos\do_an_winform\QLKH\QLKH\obj\Debug\QLKH.pdb
+E:\Đồ án winform\QLKH_master\QLKH\QLKH\QLKH\obj\Debug\QLKH.csproj.AssemblyReference.cache
+E:\Đồ án winform\QLKH_master\QLKH\QLKH\QLKH\obj\Debug\QLKH.Properties.Resources.resources
+E:\Đồ án winform\QLKH_master\QLKH\QLKH\QLKH\obj\Debug\QLKH.csproj.GenerateResource.cache
+E:\Đồ án winform\QLKH_master\QLKH\QLKH\QLKH\obj\Debug\QLKH.csproj.CoreCompileInputs.cache
+E:\Đồ án winform\QLKH_master\QLKH\QLKH\QLKH\obj\Debug\QLKH.exe
+E:\Đồ án winform\QLKH_master\QLKH\QLKH\QLKH\obj\Debug\QLKH.pdb
+E:\Đồ án winform\QLKH_master\QLKH\QLKH\QLKH\obj\Debug\QLKH.VIEWS.Admin.Admin_view.resources
+E:\Đồ án winform\QLKH_master\QLKH\QLKH\QLKH\obj\Debug\QLKH.VIEWS.DanhSach.DsGiangVien.resources
+E:\Đồ án winform\QLKH_master\QLKH\QLKH\QLKH\obj\Debug\QLKH.VIEWS.NhanVien.DSKhoaHoc.resources
+E:\Đồ án winform\QLKH_master\QLKH\QLKH\QLKH\obj\Debug\QLKH.VIEWS.DanhSach.DSNhanVien.resources
+E:\Đồ án winform\QLKH_master\QLKH\QLKH\QLKH\obj\Debug\QLKH.VIEWS.Sign_in.resources
+E:\Đồ án winform\QLKH_master\QLKH\QLKH\QLKH\obj\Debug\QLKH.VIEWS.Sign_out.resources
+E:\Đồ án winform\QLKH_master\QLKH\QLKH\QLKH\obj\Debug\QLKH.VIEWS.TrangChu.NhanVien_View.resources

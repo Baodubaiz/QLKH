@@ -54,6 +54,24 @@
     <Compile Include="VIEWS\Admin\Admin_view.Designer.cs">
       <DependentUpon>Admin_view.cs</DependentUpon>
     </Compile>
+    <Compile Include="VIEWS\DanhSach\DsGiangVien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VIEWS\DanhSach\DsGiangVien.Designer.cs">
+      <DependentUpon>DsGiangVien.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VIEWS\DanhSach\DSKhoaHoc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VIEWS\DanhSach\DSKhoaHoc.Designer.cs">
+      <DependentUpon>DSKhoaHoc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VIEWS\DanhSach\DSNhanVien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VIEWS\DanhSach\DSNhanVien.Designer.cs">
+      <DependentUpon>DSNhanVien.cs</DependentUpon>
+    </Compile>
     <Compile Include="VIEWS\Sign_in.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -65,6 +83,12 @@
     </Compile>
     <Compile Include="VIEWS\Sign_out.Designer.cs">
       <DependentUpon>Sign_out.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VIEWS\TrangChu\Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VIEWS\TrangChu\Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -78,11 +102,23 @@
     <EmbeddedResource Include="VIEWS\Admin\Admin_view.resx">
       <DependentUpon>Admin_view.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="VIEWS\DanhSach\DsGiangVien.resx">
+      <DependentUpon>DsGiangVien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VIEWS\DanhSach\DSKhoaHoc.resx">
+      <DependentUpon>DSKhoaHoc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VIEWS\DanhSach\DSNhanVien.resx">
+      <DependentUpon>DSNhanVien.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="VIEWS\Sign_in.resx">
       <DependentUpon>Sign_in.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="VIEWS\Sign_out.resx">
       <DependentUpon>Sign_out.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VIEWS\TrangChu\Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -100,6 +136,9 @@
   <ItemGroup>
     <Folder Include="CONTROLLERS\" />
     <Folder Include="MODELS\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="VIEWS\VIEWS.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
