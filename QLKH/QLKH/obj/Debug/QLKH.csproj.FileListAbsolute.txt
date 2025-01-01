@@ -36,3 +36,6 @@ E:\Đồ án winform\QLKH_master\QLKH\QLKH\QLKH\obj\Debug\QLKH.VIEWS.NhanVien.fr
 E:\Đồ án winform\QLKH_master\QLKH\QLKH\QLKH\obj\Debug\QLKH.VIEWS.DanhSach.frmNhanVien.resources
 E:\Đồ án winform\QLKH_master\QLKH\QLKH\QLKH\obj\Debug\QLKH.csproj.Up2Date
 E:\Đồ án winform\QLKH_master\QLKH\QLKH\QLKH\obj\Debug\QLKH.frmLogin.resources
+E:\Đồ án winform\QLKH_master\QLKH\QLKH\QLKH\obj\Debug\QLKH.VIEWS.DanhSach.frmHocVien.resources
+E:\Đồ án winform\QLKH_master\QLKH\QLKH\QLKH\obj\Debug\QLKH.frmLopHoc.resources
+E:\Đồ án winform\QLKH_master\QLKH\QLKH\QLKH\obj\Debug\QLKH.VIEWS.DanhSach.frmTaiKhoan.resources

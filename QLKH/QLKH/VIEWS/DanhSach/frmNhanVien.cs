@@ -23,7 +23,7 @@ namespace QLKH.VIEWS.DanhSach
         {
             try
             {
-                NhanVienContextDB context = new NhanVienContextDB();
+                KhoaHocContextDB context = new KhoaHocContextDB();
                 List<MODELS.NhanVien> listNhanVien = context.NhanViens.ToList();
                 MODELS.NhanVien nhanVien = new MODELS.NhanVien();
                 BindGrid(listNhanVien);
@@ -64,7 +64,7 @@ namespace QLKH.VIEWS.DanhSach
             try
             {
                 // Tạo context để kết nối cơ sở dữ liệu
-                NhanVienContextDB context = new NhanVienContextDB();
+                KhoaHocContextDB context = new KhoaHocContextDB();
 
                 // Lấy danh sách khóa học hiện tại từ cơ sở dữ liệu
                 List<MODELS.NhanVien> listNhanVien = context.NhanViens.ToList();
@@ -144,7 +144,7 @@ namespace QLKH.VIEWS.DanhSach
             try
             {
                 // Tạo context để kết nối cơ sở dữ liệu
-                NhanVienContextDB context = new NhanVienContextDB();
+                KhoaHocContextDB context = new KhoaHocContextDB();
 
                 // Lấy danh sách khóa học hiện tại từ cơ sở dữ liệu
                 List<MODELS.NhanVien> listNhanVien = context.NhanViens.ToList();
@@ -209,7 +209,7 @@ namespace QLKH.VIEWS.DanhSach
             try
             {
                 // Tạo context để kết nối cơ sở dữ liệu
-                NhanVienContextDB context = new NhanVienContextDB();
+                KhoaHocContextDB context = new KhoaHocContextDB();
 
                 // Lấy danh sách khóa học hiện tại từ cơ sở dữ liệu
                 List<MODELS.NhanVien> listNhanVien = context.NhanViens.ToList();

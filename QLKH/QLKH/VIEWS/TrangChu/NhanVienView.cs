@@ -57,5 +57,14 @@ namespace QLKH.VIEWS.TrangChu
         {
             openChildForm(new frmKhoaHoc());
         }
+
+        private void btnDangXuat_Click(object sender, EventArgs e)
+        {
+            frmLogin loginForm = new frmLogin();
+            loginForm.Show();
+
+            // Đóng form chính
+            this.Close();
+        }
     }
 }

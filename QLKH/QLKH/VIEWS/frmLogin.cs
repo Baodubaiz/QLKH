@@ -57,14 +57,14 @@ namespace QLKH
                             // Chuyển hướng dựa trên Role
                             MessageBox.Show($"Đăng nhập thành công! Role: {role}");
 
-                            if (role == "giangVien")
+                            if (role == "giangvien")
                             {
                                 // Chuyển đến giao diện Giảng Viên
                                 GiangVienView gvForm = new GiangVienView();
                                 gvForm.Show();
                                 this.Hide();
                             }
-                            else if (role == "nhanVien")
+                            else if (role == "nhanvien")
                             {
                                 // Chuyển đến giao diện Nhân Viên
                                 NhanVienView nvForm = new NhanVienView();
@@ -96,6 +96,16 @@ namespace QLKH
                     MessageBox.Show("Lỗi kết nối: " + ex.Message);
                 }
             }
+        }
+
+        private void btnThoat_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void frmLogin_Load(object sender, EventArgs e)
+        {
+
         }
     }
     

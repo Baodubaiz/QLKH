@@ -55,16 +55,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="MODELS\GiangVien.cs" />
-    <Compile Include="MODELS\HocVien.cs" />
-    <Compile Include="MODELS\KhoaHoc.cs" />
-    <Compile Include="MODELS\KhoaHocContextDB.cs" />
-    <Compile Include="MODELS\LopHoc.cs" />
-    <Compile Include="MODELS\GiangVienContextDB.cs" />
-    <Compile Include="MODELS\NhanVienContextDB.cs" />
-    <Compile Include="MODELS\NhanVien.cs" />
-    <Compile Include="MODELS\TaiKhoan.cs" />
-    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="VIEWS\DanhSach\frmGiangVien.cs">
       <SubType>Form</SubType>
@@ -72,17 +62,35 @@
     <Compile Include="VIEWS\DanhSach\frmGiangVien.Designer.cs">
       <DependentUpon>frmGiangVien.cs</DependentUpon>
     </Compile>
+    <Compile Include="VIEWS\DanhSach\frmHocVien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VIEWS\DanhSach\frmHocVien.Designer.cs">
+      <DependentUpon>frmHocVien.cs</DependentUpon>
+    </Compile>
     <Compile Include="VIEWS\DanhSach\frmKhoaHoc.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="VIEWS\DanhSach\frmKhoaHoc.Designer.cs">
       <DependentUpon>frmKhoaHoc.cs</DependentUpon>
     </Compile>
+    <Compile Include="VIEWS\DanhSach\frmLopHoc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VIEWS\DanhSach\frmLopHoc.Designer.cs">
+      <DependentUpon>frmLopHoc.cs</DependentUpon>
+    </Compile>
     <Compile Include="VIEWS\DanhSach\frmNhanVien.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="VIEWS\DanhSach\frmNhanVien.Designer.cs">
       <DependentUpon>frmNhanVien.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VIEWS\DanhSach\frmTaiKhoan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VIEWS\DanhSach\frmTaiKhoan.Designer.cs">
+      <DependentUpon>frmTaiKhoan.cs</DependentUpon>
     </Compile>
     <Compile Include="VIEWS\frmLogin.cs">
       <SubType>Form</SubType>
@@ -120,11 +128,20 @@
     <EmbeddedResource Include="VIEWS\DanhSach\frmGiangVien.resx">
       <DependentUpon>frmGiangVien.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="VIEWS\DanhSach\frmHocVien.resx">
+      <DependentUpon>frmHocVien.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="VIEWS\DanhSach\frmKhoaHoc.resx">
       <DependentUpon>frmKhoaHoc.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="VIEWS\DanhSach\frmLopHoc.resx">
+      <DependentUpon>frmLopHoc.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="VIEWS\DanhSach\frmNhanVien.resx">
       <DependentUpon>frmNhanVien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VIEWS\DanhSach\frmTaiKhoan.resx">
+      <DependentUpon>frmTaiKhoan.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="VIEWS\frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
@@ -152,9 +169,7 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="CONTROLLERS\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="VIEWS\VIEWS.txt" />
   </ItemGroup>

@@ -49,12 +49,26 @@ namespace QLKH.VIEWS.TrangChu
 
         private void btnLopHoc_Click(object sender, EventArgs e)
         {
-
+            openChildForm(new frmLopHoc());
         }
 
         private void btnGiangVien_Click(object sender, EventArgs e)
         {
             openChildForm(new frmGiangVien());
+        }
+
+        private void btnDangXuat_Click(object sender, EventArgs e)
+        {
+            frmLogin loginForm = new frmLogin();
+            loginForm.Show();
+
+            // Đóng form chính
+            this.Close();
+        }
+
+        private void btnHocVien_Click(object sender, EventArgs e)
+        {
+            openChildForm(new frmHocVien());
         }
     }
 }

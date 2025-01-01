@@ -45,12 +45,17 @@
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.txtMaTaiKhoan = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDsGiangVien)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.txtMaTaiKhoan);
+            this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.btnSuaGV);
             this.groupBox1.Controls.Add(this.btnXoaGV);
             this.groupBox1.Controls.Add(this.btnThemGV);
@@ -172,7 +177,8 @@
             this.Column1,
             this.Column2,
             this.Column3,
-            this.Column4});
+            this.Column4,
+            this.Column5});
             this.dgvDsGiangVien.Location = new System.Drawing.Point(1, 307);
             this.dgvDsGiangVien.Name = "dgvDsGiangVien";
             this.dgvDsGiangVien.Size = new System.Drawing.Size(947, 223);
@@ -203,14 +209,36 @@
             this.Column4.HeaderText = "Email";
             this.Column4.Name = "Column4";
             // 
-            // DsGiangVien
+            // Column5
+            // 
+            this.Column5.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Column5.HeaderText = "Mã tài khoản";
+            this.Column5.Name = "Column5";
+            // 
+            // txtMaTaiKhoan
+            // 
+            this.txtMaTaiKhoan.Location = new System.Drawing.Point(260, 171);
+            this.txtMaTaiKhoan.Name = "txtMaTaiKhoan";
+            this.txtMaTaiKhoan.Size = new System.Drawing.Size(481, 23);
+            this.txtMaTaiKhoan.TabIndex = 16;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(161, 174);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(89, 17);
+            this.label5.TabIndex = 15;
+            this.label5.Text = "Mã tài khoản";
+            // 
+            // frmGiangVien
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(948, 531);
             this.Controls.Add(this.dgvDsGiangVien);
             this.Controls.Add(this.groupBox1);
-            this.Name = "DsGiangVien";
+            this.Name = "frmGiangVien";
             this.Text = "DsGiangVien";
             this.Load += new System.EventHandler(this.DsGiangVien_Load);
             this.groupBox1.ResumeLayout(false);
@@ -235,9 +263,12 @@
         private System.Windows.Forms.Button btnSuaGV;
         private System.Windows.Forms.Button btnXoaGV;
         private System.Windows.Forms.Button btnThemGV;
+        private System.Windows.Forms.TextBox txtMaTaiKhoan;
+        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
     }
 }

@@ -22,7 +22,7 @@ namespace QLKH.VIEWS.DanhSach
         {
             try
             {
-                GiangVienContextDB context = new GiangVienContextDB();
+                KhoaHocContextDB context = new KhoaHocContextDB();
                 List<GiangVien> ListGiangVien = context.GiangViens.ToList();
                 BindGrid(ListGiangVien);
             }
@@ -42,6 +42,7 @@ namespace QLKH.VIEWS.DanhSach
                 dgvDsGiangVien.Rows[index].Cells[1].Value = item.HoTen;
                 dgvDsGiangVien.Rows[index].Cells[2].Value = item.SoDienThoai;
                 dgvDsGiangVien.Rows[index].Cells[3].Value = item.Email;
+                dgvDsGiangVien.Rows[index].Cells[4].Value = item.MaTaiKhoan;
             }
         }
 
@@ -51,13 +52,13 @@ namespace QLKH.VIEWS.DanhSach
             String HoTen = dgvDsGiangVien.Rows[e.RowIndex].Cells[1].Value.ToString();
             String SDT = dgvDsGiangVien.Rows[e.RowIndex].Cells[2].Value.ToString();
             String Email = dgvDsGiangVien.Rows[e.RowIndex].Cells[3].Value.ToString();
-            String Username = dgvDsGiangVien.Rows[e.RowIndex].Cells[4].Value.ToString();
-            String Password = dgvDsGiangVien.Rows[e.RowIndex].Cells[5].Value.ToString();
+            String MaTaiKhoan = dgvDsGiangVien.Rows[e.RowIndex].Cells[4].Value.ToString();
 
             txtMaGiangVien.Text = MaGiangVien;
             txtTenGiangVien.Text = HoTen;
             txtSDT.Text = SDT;
             txtEmail.Text = Email;
+            txtMaTaiKhoan.Text = MaTaiKhoan;
         }
 
         private void btnThemGV_Click(object sender, EventArgs e)
@@ -113,7 +114,7 @@ namespace QLKH.VIEWS.DanhSach
 
 
 
-                GiangVienContextDB context = new GiangVienContextDB();
+                KhoaHocContextDB context = new KhoaHocContextDB();
                 List<GiangVien> DsGiangVien = context.GiangViens.ToList();
 
                 if (DsGiangVien.Any(s => s.MaGiangVien == txtMaGiangVien.Text))
@@ -134,6 +135,7 @@ namespace QLKH.VIEWS.DanhSach
                     HoTen = txtTenGiangVien.Text,
                     SoDienThoai = txtSDT.Text,
                     Email = txtEmail.Text,
+                    MaTaiKhoan = txtMaTaiKhoan.Text,
                 };
 
                 context.GiangViens.Add(newGiangVien);
@@ -193,7 +195,7 @@ namespace QLKH.VIEWS.DanhSach
                     return;
                 }
 
-                GiangVienContextDB context = new GiangVienContextDB();
+                KhoaHocContextDB context = new KhoaHocContextDB();
                 List<GiangVien> giangViens = context.GiangViens.ToList();
                 var giangvien = giangViens.FirstOrDefault(s => s.MaGiangVien == txtMaGiangVien.Text);
                 if (giangvien != null)
@@ -235,7 +237,7 @@ namespace QLKH.VIEWS.DanhSach
                     return;
                 }
 
-                GiangVienContextDB context = new GiangVienContextDB();
+                KhoaHocContextDB context = new KhoaHocContextDB();
 
                 var giangvien = context.GiangViens.FirstOrDefault(s => s.MaGiangVien == txtMaGiangVien.Text.Trim());
                 if (giangvien != null)
