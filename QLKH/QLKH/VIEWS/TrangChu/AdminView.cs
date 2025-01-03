@@ -70,5 +70,10 @@ namespace QLKH.VIEWS.TrangChu
         {
             openChildForm(new frmHocVien());
         }
+
+        private void btnTaiKhoan_Click(object sender, EventArgs e)
+        {
+            openChildForm(new frmTaiKhoan());
+        }
     }
 }

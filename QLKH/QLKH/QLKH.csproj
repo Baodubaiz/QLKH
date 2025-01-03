@@ -55,6 +55,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="MODEL\GiangVien.cs" />
+    <Compile Include="MODEL\HocVien.cs" />
+    <Compile Include="MODEL\KhoaHoc.cs" />
+    <Compile Include="MODEL\KhoaHocContextDB.cs" />
+    <Compile Include="MODEL\LopHoc.cs" />
+    <Compile Include="MODEL\NhanVien.cs" />
+    <Compile Include="MODEL\TaiKhoan.cs" />
+    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="VIEWS\DanhSach\frmGiangVien.cs">
       <SubType>Form</SubType>

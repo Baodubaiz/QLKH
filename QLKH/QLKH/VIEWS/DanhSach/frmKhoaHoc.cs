@@ -10,7 +10,9 @@ using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using System.Xml.Linq;
 using System.Data.SqlClient;
-using QLKH.MODELS;
+
+using QLKH.MODEL;
+using System.Data.Entity.Core.Common.CommandTrees.ExpressionBuilder;
 
 namespace QLKH.VIEWS.NhanVien
 {
@@ -20,7 +22,6 @@ namespace QLKH.VIEWS.NhanVien
         {
             InitializeComponent();
 
-            dgvDanhSach.SelectionChanged += dgvDanhSach_SelectionChanged;
         }
 
         private void btnThem_Click(object sender, EventArgs e)
@@ -58,12 +59,6 @@ namespace QLKH.VIEWS.NhanVien
                     txtLichHoc.Focus();
                     return;
                 }
-                if (string.IsNullOrWhiteSpace(txtGiangVien.Text))
-                {
-                    MessageBox.Show("Mã giảng viên không được để trống!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    txtGiangVien.Focus();
-                    return;
-                }
 
                 // Kiểm tra trùng lặp mã khóa học
                 if (listKhoaHoc.Any(s => s.MaKhoaHoc == txtMaKhoaHoc.Text))
@@ -80,7 +75,7 @@ namespace QLKH.VIEWS.NhanVien
                     TenKhoaHoc = txtTenKhoaHoc.Text,
                     ThoiGianHoc = txtThoiGianHoc.Text,
                     LichHoc = txtLichHoc.Text,
-                    MaGiangVien = txtGiangVien.Text,
+                    MaGiangVien = cmbGiangVien.SelectedValue.ToString()
                 };
 
                 // Thêm khóa học mới vào cơ sở dữ liệu
@@ -146,10 +141,10 @@ namespace QLKH.VIEWS.NhanVien
                     txtLichHoc.Focus();
                     return;
                 }
-                if (string.IsNullOrWhiteSpace(txtGiangVien.Text))
+                if (string.IsNullOrWhiteSpace(cmbGiangVien.Text))
                 {
                     MessageBox.Show("Mã giảng viên không được để trống!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    txtGiangVien.Focus();
+                    cmbGiangVien.Focus();
                     return;
                 }
 
@@ -162,7 +157,7 @@ namespace QLKH.VIEWS.NhanVien
                     khoaHoc.TenKhoaHoc = txtTenKhoaHoc.Text;
                     khoaHoc.ThoiGianHoc = txtThoiGianHoc.Text;
                     khoaHoc.LichHoc = txtLichHoc.Text;
-                    khoaHoc.MaGiangVien = txtGiangVien.Text;
+                    khoaHoc.MaGiangVien = cmbGiangVien.SelectedValue.ToString();
 
                     // Lưu thay đổi vào cơ sở dữ liệu
                     context.SaveChanges();
@@ -223,6 +218,22 @@ namespace QLKH.VIEWS.NhanVien
                 MessageBox.Show($"Lỗi khi xóa dữ liệu: {ex.Message}", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+        private void LoadGiangVienComboBox()
+        {
+            try
+            {
+                KhoaHocContextDB context = new KhoaHocContextDB();
+                var giangVienList = context.GiangViens.ToList();
+
+                cmbGiangVien.DataSource = giangVienList;
+                cmbGiangVien.DisplayMember = "HoTen"; // Thuộc tính hiển thị
+                cmbGiangVien.ValueMember = "MaGiangVien"; // Thuộc tính giá trị
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Lỗi khi tải dữ liệu giảng viên: {ex.Message}", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
 
         private void DSKhoaHoc_Load(object sender, EventArgs e)
         {
@@ -232,6 +243,7 @@ namespace QLKH.VIEWS.NhanVien
                 List<KhoaHoc> listKhoaHoc = context.KhoaHocs.ToList(); //lấy sinh viên
                 KhoaHoc khoahoc = new KhoaHoc();
                 BindGrid(listKhoaHoc);
+                LoadGiangVienComboBox();
             }
             catch (Exception ex)
             {
@@ -250,7 +262,7 @@ namespace QLKH.VIEWS.NhanVien
                 dgvDanhSach.Rows[index].Cells[1].Value = item.TenKhoaHoc;
                 dgvDanhSach.Rows[index].Cells[2].Value = item.ThoiGianHoc;
                 dgvDanhSach.Rows[index].Cells[3].Value = item.LichHoc;
-                dgvDanhSach.Rows[index].Cells[4].Value = item.GiangVien.HoTen;
+                dgvDanhSach.Rows[index].Cells[4].Value = item.GiangVien?.HoTen ?? "Không có giảng viên";
             }
         }
 
@@ -268,26 +280,12 @@ namespace QLKH.VIEWS.NhanVien
                 txtTenKhoaHoc.Text = selectedRow.Cells["Column2"].Value.ToString();
                 txtThoiGianHoc.Text = selectedRow.Cells["Column3"].Value.ToString();
                 txtLichHoc.Text = selectedRow.Cells["Column4"].Value.ToString();
-                txtGiangVien.Text = selectedRow.Cells["Column5"].Value.ToString();
+                cmbGiangVien.Text = selectedRow.Cells["Column5"].Value.ToString();
             }
         }
 
-        private void dgvDanhSach_SelectionChanged(object sender, EventArgs e)
-        {
-            if (dgvDanhSach.SelectedRows.Count > 0)
-            {
-                var row = dgvDanhSach.SelectedRows[0];
-                txtMaKhoaHoc.Text = row.Cells["Column1"].Value.ToString();
-                txtTenKhoaHoc.Text = row.Cells["Column2"].Value.ToString();
-                txtThoiGianHoc.Text = row.Cells["Column3"].Value.ToString();
-                txtLichHoc.Text = row.Cells["Column4"].Value.ToString();
-                txtGiangVien.Text = row.Cells["Column5"].Value.ToString();
-            }
-        }
+        
 
-        private void txtMaKhoaHoc_TextChanged(object sender, EventArgs e)
-        {
-
-        }
+        
     }
 }

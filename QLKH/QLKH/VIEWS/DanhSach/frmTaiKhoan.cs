@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using QLKH.MODELS;
+using QLKH.MODEL;
 
 namespace QLKH.VIEWS.DanhSach
 {
@@ -23,8 +23,8 @@ namespace QLKH.VIEWS.DanhSach
             try
             {
                 KhoaHocContextDB context = new KhoaHocContextDB();
-                List<MODELS.TaiKhoan> taiKhoans = context.TaiKhoans.ToList();
-                MODELS.TaiKhoan taiKhoan = new MODELS.TaiKhoan();
+                List<MODEL.TaiKhoan> taiKhoans = context.TaiKhoans.ToList();
+                MODEL.TaiKhoan taiKhoan = new MODEL.TaiKhoan();
                 BindGrid(taiKhoans);
             }
             catch (Exception ex)
@@ -33,7 +33,7 @@ namespace QLKH.VIEWS.DanhSach
             }
         }
 
-        private void BindGrid(List<MODELS.TaiKhoan> taiKhoans)
+        private void BindGrid(List<MODEL.TaiKhoan> taiKhoans)
         {
             dgvDsTaiKhoan.Rows.Clear();
             foreach (var item in taiKhoans)
@@ -66,7 +66,7 @@ namespace QLKH.VIEWS.DanhSach
                 KhoaHocContextDB context = new KhoaHocContextDB();
 
                 // Lấy danh sách khóa học hiện tại từ cơ sở dữ liệu
-                List<MODELS.TaiKhoan> taiKhoans = context.TaiKhoans.ToList();
+                List<MODEL.TaiKhoan> taiKhoans = context.TaiKhoans.ToList();
 
                 // Kiểm tra dữ liệu đầu vào
                 if (string.IsNullOrWhiteSpace(txtMaTaiKhoan.Text))
@@ -103,7 +103,7 @@ namespace QLKH.VIEWS.DanhSach
                 }
 
                 // Tạo một đối tượng TaiKhoan mới
-                var newTaiKhoan = new MODELS.TaiKhoan
+                var newTaiKhoan = new MODEL.TaiKhoan
                 {
                     MaTaiKhoan = txtMaTaiKhoan.Text,
                     Username = txtUsername.Text,
@@ -146,7 +146,7 @@ namespace QLKH.VIEWS.DanhSach
                 KhoaHocContextDB context = new KhoaHocContextDB();
 
                 // Lấy danh sách khóa học hiện tại từ cơ sở dữ liệu
-                List<MODELS.TaiKhoan> taiKhoans = context.TaiKhoans.ToList();
+                List<MODEL.TaiKhoan> taiKhoans = context.TaiKhoans.ToList();
 
                 // Kiểm tra dữ liệu đầu vào
                 if (string.IsNullOrWhiteSpace(txtMaTaiKhoan.Text))
@@ -188,7 +188,7 @@ namespace QLKH.VIEWS.DanhSach
                 KhoaHocContextDB context = new KhoaHocContextDB();
 
                 // Lấy danh sách khóa học hiện tại từ cơ sở dữ liệu
-                List<MODELS.TaiKhoan> taiKhoans = context.TaiKhoans.ToList();
+                List<MODEL.TaiKhoan> taiKhoans = context.TaiKhoans.ToList();
 
                 // Kiểm tra dữ liệu đầu vào
                 if (string.IsNullOrWhiteSpace(txtMaTaiKhoan.Text))

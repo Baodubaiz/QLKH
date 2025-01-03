@@ -30,12 +30,12 @@
         {
             this.components = new System.ComponentModel.Container();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.cmbGiangVien = new System.Windows.Forms.ComboBox();
             this.btnThem = new System.Windows.Forms.Button();
             this.btnXoa = new System.Windows.Forms.Button();
             this.btnSua = new System.Windows.Forms.Button();
             this.txtLichHoc = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.txtGiangVien = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.txtThoiGianHoc = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -59,12 +59,12 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.cmbGiangVien);
             this.groupBox1.Controls.Add(this.btnThem);
             this.groupBox1.Controls.Add(this.btnXoa);
             this.groupBox1.Controls.Add(this.btnSua);
             this.groupBox1.Controls.Add(this.txtLichHoc);
             this.groupBox1.Controls.Add(this.label7);
-            this.groupBox1.Controls.Add(this.txtGiangVien);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.txtThoiGianHoc);
             this.groupBox1.Controls.Add(this.label3);
@@ -73,18 +73,26 @@
             this.groupBox1.Controls.Add(this.txtMaKhoaHoc);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Location = new System.Drawing.Point(9, 10);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox1.Size = new System.Drawing.Size(692, 211);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông tin khóa học";
             // 
+            // cmbGiangVien
+            // 
+            this.cmbGiangVien.FormattingEnabled = true;
+            this.cmbGiangVien.Location = new System.Drawing.Point(167, 127);
+            this.cmbGiangVien.Name = "cmbGiangVien";
+            this.cmbGiangVien.Size = new System.Drawing.Size(368, 21);
+            this.cmbGiangVien.TabIndex = 3;
+            // 
             // btnThem
             // 
             this.btnThem.Location = new System.Drawing.Point(358, 188);
-            this.btnThem.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnThem.Margin = new System.Windows.Forms.Padding(2);
             this.btnThem.Name = "btnThem";
             this.btnThem.Size = new System.Drawing.Size(56, 19);
             this.btnThem.TabIndex = 2;
@@ -95,7 +103,7 @@
             // btnXoa
             // 
             this.btnXoa.Location = new System.Drawing.Point(479, 188);
-            this.btnXoa.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnXoa.Margin = new System.Windows.Forms.Padding(2);
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.Size = new System.Drawing.Size(56, 19);
             this.btnXoa.TabIndex = 2;
@@ -106,7 +114,7 @@
             // btnSua
             // 
             this.btnSua.Location = new System.Drawing.Point(418, 188);
-            this.btnSua.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnSua.Margin = new System.Windows.Forms.Padding(2);
             this.btnSua.Name = "btnSua";
             this.btnSua.Size = new System.Drawing.Size(56, 19);
             this.btnSua.TabIndex = 2;
@@ -117,7 +125,7 @@
             // txtLichHoc
             // 
             this.txtLichHoc.Location = new System.Drawing.Point(146, 104);
-            this.txtLichHoc.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtLichHoc.Margin = new System.Windows.Forms.Padding(2);
             this.txtLichHoc.Name = "txtLichHoc";
             this.txtLichHoc.Size = new System.Drawing.Size(390, 20);
             this.txtLichHoc.TabIndex = 1;
@@ -132,14 +140,6 @@
             this.label7.TabIndex = 0;
             this.label7.Text = "Lịch học:";
             // 
-            // txtGiangVien
-            // 
-            this.txtGiangVien.Location = new System.Drawing.Point(146, 127);
-            this.txtGiangVien.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.txtGiangVien.Name = "txtGiangVien";
-            this.txtGiangVien.Size = new System.Drawing.Size(390, 20);
-            this.txtGiangVien.TabIndex = 1;
-            // 
             // label5
             // 
             this.label5.AutoSize = true;
@@ -153,7 +153,7 @@
             // txtThoiGianHoc
             // 
             this.txtThoiGianHoc.Location = new System.Drawing.Point(146, 81);
-            this.txtThoiGianHoc.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtThoiGianHoc.Margin = new System.Windows.Forms.Padding(2);
             this.txtThoiGianHoc.Name = "txtThoiGianHoc";
             this.txtThoiGianHoc.Size = new System.Drawing.Size(390, 20);
             this.txtThoiGianHoc.TabIndex = 1;
@@ -171,7 +171,7 @@
             // txtTenKhoaHoc
             // 
             this.txtTenKhoaHoc.Location = new System.Drawing.Point(146, 58);
-            this.txtTenKhoaHoc.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtTenKhoaHoc.Margin = new System.Windows.Forms.Padding(2);
             this.txtTenKhoaHoc.Name = "txtTenKhoaHoc";
             this.txtTenKhoaHoc.Size = new System.Drawing.Size(390, 20);
             this.txtTenKhoaHoc.TabIndex = 1;
@@ -189,11 +189,10 @@
             // txtMaKhoaHoc
             // 
             this.txtMaKhoaHoc.Location = new System.Drawing.Point(146, 36);
-            this.txtMaKhoaHoc.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtMaKhoaHoc.Margin = new System.Windows.Forms.Padding(2);
             this.txtMaKhoaHoc.Name = "txtMaKhoaHoc";
             this.txtMaKhoaHoc.Size = new System.Drawing.Size(390, 20);
             this.txtMaKhoaHoc.TabIndex = 1;
-            this.txtMaKhoaHoc.TextChanged += new System.EventHandler(this.txtMaKhoaHoc_TextChanged);
             // 
             // label1
             // 
@@ -215,14 +214,13 @@
             this.Column4,
             this.Column5});
             this.dgvDanhSach.Location = new System.Drawing.Point(9, 226);
-            this.dgvDanhSach.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dgvDanhSach.Margin = new System.Windows.Forms.Padding(2);
             this.dgvDanhSach.Name = "dgvDanhSach";
             this.dgvDanhSach.RowHeadersWidth = 51;
             this.dgvDanhSach.RowTemplate.Height = 24;
             this.dgvDanhSach.Size = new System.Drawing.Size(692, 189);
             this.dgvDanhSach.TabIndex = 1;
             this.dgvDanhSach.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDanhSach_CellContentClick);
-            this.dgvDanhSach.SelectionChanged += new System.EventHandler(this.dgvDanhSach_SelectionChanged);
             // 
             // Column1
             // 
@@ -267,15 +265,15 @@
             // 
             this.khoaHocBindingSource.DataMember = "KhoaHoc";
             // 
-            // DSKhoaHoc
+            // frmKhoaHoc
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(710, 425);
             this.Controls.Add(this.dgvDanhSach);
             this.Controls.Add(this.groupBox1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.Name = "DSKhoaHoc";
+            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Name = "frmKhoaHoc";
             this.Text = "Danh Sách Khóa Học";
             this.Load += new System.EventHandler(this.DSKhoaHoc_Load);
             this.groupBox1.ResumeLayout(false);
@@ -291,7 +289,6 @@
 
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox txtGiangVien;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox txtThoiGianHoc;
         private System.Windows.Forms.Label label3;
@@ -316,5 +313,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
+        private System.Windows.Forms.ComboBox cmbGiangVien;
     }
 }

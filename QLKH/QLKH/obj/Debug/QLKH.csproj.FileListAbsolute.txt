@@ -39,3 +39,4 @@ E:\Đồ án winform\QLKH_master\QLKH\QLKH\QLKH\obj\Debug\QLKH.frmLogin.resource
 E:\Đồ án winform\QLKH_master\QLKH\QLKH\QLKH\obj\Debug\QLKH.VIEWS.DanhSach.frmHocVien.resources
 E:\Đồ án winform\QLKH_master\QLKH\QLKH\QLKH\obj\Debug\QLKH.frmLopHoc.resources
 E:\Đồ án winform\QLKH_master\QLKH\QLKH\QLKH\obj\Debug\QLKH.VIEWS.DanhSach.frmTaiKhoan.resources
+E:\Đồ án winform\QLKH_master\QLKH\QLKH\QLKH\obj\Debug\QLKH.VIEWS.DanhSach.frmDsHocVien.resources

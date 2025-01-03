@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using QLKH.MODELS;
+using QLKH.MODEL;
 
 namespace QLKH.VIEWS.DanhSach
 {
@@ -24,8 +24,8 @@ namespace QLKH.VIEWS.DanhSach
             try
             {
                 KhoaHocContextDB context = new KhoaHocContextDB();
-                List<MODELS.NhanVien> listNhanVien = context.NhanViens.ToList();
-                MODELS.NhanVien nhanVien = new MODELS.NhanVien();
+                List<MODEL.NhanVien> listNhanVien = context.NhanViens.ToList();
+                MODEL.NhanVien nhanVien = new MODEL.NhanVien();
                 BindGrid(listNhanVien);
             }
             catch (Exception ex)
@@ -34,7 +34,7 @@ namespace QLKH.VIEWS.DanhSach
             }
         }
 
-        private void BindGrid(List<MODELS.NhanVien> DSNhanVien)
+        private void BindGrid(List<MODEL.NhanVien> DSNhanVien)
         {
             dgvDanhSach.Rows.Clear();
             foreach (var item in DSNhanVien)
@@ -67,7 +67,7 @@ namespace QLKH.VIEWS.DanhSach
                 KhoaHocContextDB context = new KhoaHocContextDB();
 
                 // Lấy danh sách khóa học hiện tại từ cơ sở dữ liệu
-                List<MODELS.NhanVien> listNhanVien = context.NhanViens.ToList();
+                List<MODEL.NhanVien> listNhanVien = context.NhanViens.ToList();
 
                 // Kiểm tra dữ liệu đầu vào
                 if (string.IsNullOrWhiteSpace(txtMaNhanVien.Text))
@@ -104,7 +104,7 @@ namespace QLKH.VIEWS.DanhSach
                 }
 
                 // Tạo một đối tượng KhoaHoc mới
-                var newNhanVien = new MODELS.NhanVien
+                var newNhanVien = new MODEL.NhanVien
                 {
                     MaNhanVien = txtMaNhanVien.Text,
                     HoTen = txtHoTen.Text,
@@ -147,7 +147,7 @@ namespace QLKH.VIEWS.DanhSach
                 KhoaHocContextDB context = new KhoaHocContextDB();
 
                 // Lấy danh sách khóa học hiện tại từ cơ sở dữ liệu
-                List<MODELS.NhanVien> listNhanVien = context.NhanViens.ToList();
+                List<MODEL.NhanVien> listNhanVien = context.NhanViens.ToList();
 
                 // Kiểm tra dữ liệu đầu vào
                 if (string.IsNullOrWhiteSpace(txtMaNhanVien.Text))
@@ -212,7 +212,7 @@ namespace QLKH.VIEWS.DanhSach
                 KhoaHocContextDB context = new KhoaHocContextDB();
 
                 // Lấy danh sách khóa học hiện tại từ cơ sở dữ liệu
-                List<MODELS.NhanVien> listNhanVien = context.NhanViens.ToList();
+                List<MODEL.NhanVien> listNhanVien = context.NhanViens.ToList();
 
                 // Kiểm tra dữ liệu đầu vào
                 if (string.IsNullOrWhiteSpace(txtMaNhanVien.Text))
