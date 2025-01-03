@@ -44,6 +44,7 @@ namespace QLKH.VIEWS.DanhSach
                 dgvDanhSach.Rows[index].Cells[1].Value = item.HoTen;
                 dgvDanhSach.Rows[index].Cells[2].Value = item.SoDienThoai;
                 dgvDanhSach.Rows[index].Cells[3].Value = item.Email;
+                dgvDanhSach.Rows[index].Cells[4].Value = item.MaTaiKhoan;
             }
         }
 
@@ -72,47 +73,59 @@ namespace QLKH.VIEWS.DanhSach
                 // Kiểm tra dữ liệu đầu vào
                 if (string.IsNullOrWhiteSpace(txtMaNhanVien.Text))
                 {
-                    MessageBox.Show("Mã khóa học không được để trống!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("Mã nhân viên không được để trống!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     txtMaNhanVien.Focus();
                     return;
                 }
                 if (string.IsNullOrWhiteSpace(txtHoTen.Text))
                 {
-                    MessageBox.Show("Tên khóa học không được để trống!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("Tên nhân viên không được để trống!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     txtHoTen.Focus();
                     return;
                 }
                 if (string.IsNullOrWhiteSpace(txtSDT.Text))
                 {
-                    MessageBox.Show("Thời gian học không được để trống!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("Số điện thoại không được để trống!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     txtSDT.Focus();
                     return;
                 }
                 if (string.IsNullOrWhiteSpace(txtEmail.Text))
                 {
-                    MessageBox.Show("Lịch học không được để trống!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("Email không được để trống!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     txtEmail.Focus();
                     return;
                 }
+                if (string.IsNullOrWhiteSpace(txtMaTaiKhoan.Text))
+                {
+                    MessageBox.Show("Mã tài khoản không được để trống!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    txtMaTaiKhoan.Focus();
+                    return;
+                }
 
-                // Kiểm tra trùng lặp mã khóa học
+                var taiKhoan = context.TaiKhoans.FirstOrDefault(s => s.MaTaiKhoan == txtMaTaiKhoan.Text);
+                if (taiKhoan == null)
+                {
+                    MessageBox.Show("Mã tài khoản không tồn tại. Vui lòng kiểm tra lại!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    txtMaTaiKhoan.Focus();
+                    return;
+                }
+
                 if (listNhanVien.Any(s => s.MaNhanVien == txtMaNhanVien.Text))
                 {
-                    MessageBox.Show("Mã khóa học đã tồn tại. Vui lòng nhập mã khác!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("Mã nhân viên đã tồn tại. Vui lòng nhập mã khác!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     txtMaNhanVien.Focus();
                     return;
                 }
 
-                // Tạo một đối tượng KhoaHoc mới
                 var newNhanVien = new MODEL.NhanVien
                 {
                     MaNhanVien = txtMaNhanVien.Text,
                     HoTen = txtHoTen.Text,
                     SoDienThoai = txtSDT.Text,
                     Email = txtEmail.Text,
+                    MaTaiKhoan = txtMaTaiKhoan.Text,
                 };
 
-                // Thêm khóa học mới vào cơ sở dữ liệu
                 context.NhanViens.Add(newNhanVien);
                 try
                 {
@@ -131,7 +144,7 @@ namespace QLKH.VIEWS.DanhSach
 
                 // Tải lại dữ liệu lên DataGridView
                 BindGrid(context.NhanViens.ToList());
-                MessageBox.Show("Thêm khóa học thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Thêm nhân viên thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (Exception ex)
             {
@@ -152,13 +165,13 @@ namespace QLKH.VIEWS.DanhSach
                 // Kiểm tra dữ liệu đầu vào
                 if (string.IsNullOrWhiteSpace(txtMaNhanVien.Text))
                 {
-                    MessageBox.Show("Mã khóa học không được để trống!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("Mã nhân viên không được để trống!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     txtMaNhanVien.Focus();
                     return;
                 }
                 if (string.IsNullOrWhiteSpace(txtHoTen.Text))
                 {
-                    MessageBox.Show("Tên khóa học không được để trống!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("Tên nhân viên không được để trống!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     txtHoTen.Focus();
                     return;
                 }
@@ -170,13 +183,26 @@ namespace QLKH.VIEWS.DanhSach
                 }
                 if (string.IsNullOrWhiteSpace(txtEmail.Text))
                 {
-                    MessageBox.Show("Lịch học không được để trống!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("Email không được để trống!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     txtEmail.Focus();
+                    return;
+                }
+                if (string.IsNullOrWhiteSpace(txtMaTaiKhoan.Text))
+                {
+                    MessageBox.Show("Mã tài khoản không được để trống!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    txtMaTaiKhoan.Focus();
                     return;
                 }
 
 
-                // Tìm khóa học theo mã khóa học
+                var taiKhoan = context.TaiKhoans.FirstOrDefault(s => s.MaTaiKhoan == txtMaTaiKhoan.Text);
+                if (taiKhoan == null)
+                {
+                    MessageBox.Show("Mã tài khoản không tồn tại. Vui lòng kiểm tra lại!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    txtMaTaiKhoan.Focus();
+                    return;
+                }
+
                 var nhanVien = listNhanVien.FirstOrDefault(s => s.MaNhanVien == txtMaNhanVien.Text);
 
                 if (nhanVien != null)
@@ -185,17 +211,20 @@ namespace QLKH.VIEWS.DanhSach
                     nhanVien.HoTen = txtHoTen.Text;
                     nhanVien.SoDienThoai = txtSDT.Text;
                     nhanVien.Email = txtEmail.Text;
+                    nhanVien.MaTaiKhoan = txtMaTaiKhoan.Text;
+
+
 
                     // Lưu thay đổi vào cơ sở dữ liệu
                     context.SaveChanges();
 
                     // Tải lại dữ liệu lên DataGridView
                     BindGrid(context.NhanViens.ToList());
-                    MessageBox.Show("Khóa học đã được cập nhật thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Nhân viên đã được cập nhật thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
                 {
-                    MessageBox.Show("Không tìm thấy khóa học với mã đã nhập!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Không tìm thấy nhân viên với mã đã nhập!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             catch (Exception ex)
@@ -217,7 +246,7 @@ namespace QLKH.VIEWS.DanhSach
                 // Kiểm tra dữ liệu đầu vào
                 if (string.IsNullOrWhiteSpace(txtMaNhanVien.Text))
                 {
-                    MessageBox.Show("Mã khóa học không được để trống!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("Mã nhân viên không được để trống!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     txtMaNhanVien.Focus();
                     return;
                 }
@@ -227,17 +256,15 @@ namespace QLKH.VIEWS.DanhSach
 
                 if (nhanVien != null)
                 {
-                    // Xóa khóa học khỏi cơ sở dữ liệu
                     context.NhanViens.Remove(nhanVien);
                     context.SaveChanges();
 
-                    // Tải lại dữ liệu lên DataGridView
                     BindGrid(context.NhanViens.ToList());
-                    MessageBox.Show("Khóa học đã được xóa thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("nhân viên đã được xóa thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
                 {
-                    MessageBox.Show("Không tìm thấy khóa học với mã đã nhập!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Không tìm thấy nhân viên với mã đã nhập!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             catch (Exception ex)
@@ -250,14 +277,13 @@ namespace QLKH.VIEWS.DanhSach
         {
             if (e.RowIndex >= 0)
             {
-                // Lấy hàng được chọn từ DataGridView
                 DataGridViewRow selectedRow = dgvDanhSach.Rows[e.RowIndex];
 
-                // Hiển thị dữ liệu từ hàng được chọn lên các TextBox
                 txtMaNhanVien.Text = selectedRow.Cells["Column1"].Value.ToString();
                 txtHoTen.Text = selectedRow.Cells["Column2"].Value.ToString();
                 txtSDT.Text = selectedRow.Cells["Column3"].Value.ToString();
                 txtEmail.Text = selectedRow.Cells["Column4"].Value.ToString();
+                txtMaTaiKhoan.Text = selectedRow.Cells["Column5"].Value.ToString();
             }
         }
 

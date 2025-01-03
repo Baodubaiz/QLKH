@@ -23,8 +23,8 @@ namespace QLKH.VIEWS.DanhSach
             try
             {
                 KhoaHocContextDB context = new KhoaHocContextDB();
-                List<MODEL.TaiKhoan> taiKhoans = context.TaiKhoans.ToList();
-                MODEL.TaiKhoan taiKhoan = new MODEL.TaiKhoan();
+                List<TaiKhoan> taiKhoans = context.TaiKhoans.ToList();
+                FillRoleCombobox();
                 BindGrid(taiKhoans);
             }
             catch (Exception ex)
@@ -32,6 +32,21 @@ namespace QLKH.VIEWS.DanhSach
                 MessageBox.Show(ex.Message);
             }
         }
+
+        private void FillRoleCombobox()
+        {
+            try
+            {
+                List<string> roles = new List<string> { "admin", "giangvien", "nhanvien" };
+
+                cmbRole.DataSource = roles;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Lỗi khi tải dữ liệu tài khoản: {ex.Message}", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
 
         private void BindGrid(List<MODEL.TaiKhoan> taiKhoans)
         {
@@ -46,29 +61,15 @@ namespace QLKH.VIEWS.DanhSach
             }
         }
 
-        private void dgvDanhSach_SelectionChanged(object sender, EventArgs e)
-        {
-            if (dgvDsTaiKhoan.SelectedRows.Count > 0)
-            {
-                var row = dgvDsTaiKhoan.SelectedRows[0];
-                txtMaTaiKhoan.Text = row.Cells["Column1"].Value.ToString();
-                txtUsername.Text = row.Cells["Column2"].Value.ToString();
-                txtPassword.Text = row.Cells["Column3"].Value.ToString();
-                txtRole.Text = row.Cells["Column4"].Value.ToString();
-            }
-        }
 
         private void btnThemTaiKhoan_Click(object sender, EventArgs e)
         {
             try
             {
-                // Tạo context để kết nối cơ sở dữ liệu
                 KhoaHocContextDB context = new KhoaHocContextDB();
 
-                // Lấy danh sách khóa học hiện tại từ cơ sở dữ liệu
                 List<MODEL.TaiKhoan> taiKhoans = context.TaiKhoans.ToList();
 
-                // Kiểm tra dữ liệu đầu vào
                 if (string.IsNullOrWhiteSpace(txtMaTaiKhoan.Text))
                 {
                     MessageBox.Show("Mã tài khoản không được để trống!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -87,14 +88,8 @@ namespace QLKH.VIEWS.DanhSach
                     txtPassword.Focus();
                     return;
                 }
-                if (string.IsNullOrWhiteSpace(txtRole.Text))
-                {
-                    MessageBox.Show("Vai trò không được để trống!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    txtRole.Focus();
-                    return;
-                }
+                
 
-                // Kiểm tra trùng lặp mã tài khoản
                 if (taiKhoans.Any(s => s.MaTaiKhoan == txtMaTaiKhoan.Text))
                 {
                     MessageBox.Show("Mã tài khoản đã tồn tại. Vui lòng nhập mã khác!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -102,16 +97,14 @@ namespace QLKH.VIEWS.DanhSach
                     return;
                 }
 
-                // Tạo một đối tượng TaiKhoan mới
                 var newTaiKhoan = new MODEL.TaiKhoan
                 {
                     MaTaiKhoan = txtMaTaiKhoan.Text,
                     Username = txtUsername.Text,
                     Password = txtPassword.Text,
-                    Role = txtRole.Text,
+                    Role = cmbRole.SelectedValue.ToString(),
                 };
 
-                // Thêm tài khoản mới vào cơ sở dữ liệu
                 context.TaiKhoans.Add(newTaiKhoan);
                 try
                 {
@@ -128,7 +121,6 @@ namespace QLKH.VIEWS.DanhSach
                     }
                 }
 
-                // Tải lại dữ liệu lên DataGridView
                 BindGrid(context.TaiKhoans.ToList());
                 MessageBox.Show("Thêm tài khoản thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
@@ -142,13 +134,10 @@ namespace QLKH.VIEWS.DanhSach
         {
             try
             {
-                // Tạo context để kết nối cơ sở dữ liệu
                 KhoaHocContextDB context = new KhoaHocContextDB();
 
-                // Lấy danh sách khóa học hiện tại từ cơ sở dữ liệu
                 List<MODEL.TaiKhoan> taiKhoans = context.TaiKhoans.ToList();
 
-                // Kiểm tra dữ liệu đầu vào
                 if (string.IsNullOrWhiteSpace(txtMaTaiKhoan.Text))
                 {
                     MessageBox.Show("Mã tài khoản không được để trống!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -156,18 +145,20 @@ namespace QLKH.VIEWS.DanhSach
                     return;
                 }
 
-                // Tìm khóa học theo mã khóa học
                 var TaiKhoan = taiKhoans.FirstOrDefault(s => s.MaTaiKhoan == txtMaTaiKhoan.Text);
 
                 if (TaiKhoan != null)
                 {
-                    // Xóa khóa học khỏi cơ sở dữ liệu
-                    context.TaiKhoans.Remove(TaiKhoan);
-                    context.SaveChanges();
+                    DialogResult result = MessageBox.Show("Bạn có muốn xóa tài khoản này không?", "Xác nhận xóa", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
-                    // Tải lại dữ liệu lên DataGridView
-                    BindGrid(context.TaiKhoans.ToList());
-                    MessageBox.Show("Tài khoản đã được xóa thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    if (result == DialogResult.Yes)
+                    {
+                        context.TaiKhoans.Remove(TaiKhoan);
+                        context.SaveChanges();
+
+                        BindGrid(context.TaiKhoans.ToList());
+                        MessageBox.Show("Tài khoản đã được xóa thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
                 }
                 else
                 {
@@ -184,13 +175,10 @@ namespace QLKH.VIEWS.DanhSach
         {
             try
             {
-                // Tạo context để kết nối cơ sở dữ liệu
                 KhoaHocContextDB context = new KhoaHocContextDB();
 
-                // Lấy danh sách khóa học hiện tại từ cơ sở dữ liệu
                 List<MODEL.TaiKhoan> taiKhoans = context.TaiKhoans.ToList();
 
-                // Kiểm tra dữ liệu đầu vào
                 if (string.IsNullOrWhiteSpace(txtMaTaiKhoan.Text))
                 {
                     MessageBox.Show("Mã tài khoản không được để trống!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -204,28 +192,19 @@ namespace QLKH.VIEWS.DanhSach
                     return;
                 }
                 
-                if (string.IsNullOrWhiteSpace(txtRole.Text))
-                {
-                    MessageBox.Show("Vai trò không được để trống!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    txtRole.Focus();
-                    return;
-                }
+                
 
 
-                // Tìm khóa học theo mã khóa học
                 var taiKhoan = taiKhoans.FirstOrDefault(s => s.MaTaiKhoan == txtMaTaiKhoan.Text);
 
                 if (taiKhoan != null)
                 {
-                    // Cập nhật thông tin khóa học
                     taiKhoan.Username = txtUsername.Text;
                     taiKhoan.Password = txtPassword.Text;
-                    taiKhoan.Role = txtRole.Text;
+                    taiKhoan.Role = cmbRole.SelectedValue.ToString();
 
-                    // Lưu thay đổi vào cơ sở dữ liệu
                     context.SaveChanges();
 
-                    // Tải lại dữ liệu lên DataGridView
                     BindGrid(context.TaiKhoans.ToList());
                     MessageBox.Show("Tài khoản đã được cập nhật thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
@@ -244,14 +223,12 @@ namespace QLKH.VIEWS.DanhSach
         {
             if (e.RowIndex >= 0)
             {
-                // Lấy hàng được chọn từ DataGridView
                 DataGridViewRow selectedRow = dgvDsTaiKhoan.Rows[e.RowIndex];
 
-                // Hiển thị dữ liệu từ hàng được chọn lên các TextBox
                 txtMaTaiKhoan.Text = selectedRow.Cells["Column1"].Value.ToString();
                 txtUsername.Text = selectedRow.Cells["Column2"].Value.ToString();
                 txtPassword.Text = selectedRow.Cells["Column3"].Value.ToString();
-                txtRole.Text = selectedRow.Cells["Column4"].Value.ToString();
+                cmbRole.Text = selectedRow.Cells["Column4"].Value.ToString();
             }
         }
     }

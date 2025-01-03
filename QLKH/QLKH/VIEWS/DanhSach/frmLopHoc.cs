@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using QLKH.MODEL;
+using QLKH.VIEWS.DanhSach;
 
 
 namespace QLKH
@@ -56,7 +57,14 @@ namespace QLKH
 
         private void button4_Click(object sender, EventArgs e)
         {
-            
+            if (string.IsNullOrEmpty(txtMaLop.Text))
+            {
+                MessageBox.Show("Vui lòng chọn lớp học để xem chi tiết học viên.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            frmChiTiet frmChiTiet = new frmChiTiet(txtMaLop.Text);
+            frmChiTiet.ShowDialog();
         }
 
         private void groupBox1_Enter(object sender, EventArgs e)

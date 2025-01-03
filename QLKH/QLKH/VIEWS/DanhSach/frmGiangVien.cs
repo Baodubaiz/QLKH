@@ -137,6 +137,13 @@ namespace QLKH.VIEWS.DanhSach
                     Email = txtEmail.Text,
                     MaTaiKhoan = txtMaTaiKhoan.Text,
                 };
+                var taiKhoan = context.TaiKhoans.FirstOrDefault(s => s.MaTaiKhoan == txtMaTaiKhoan.Text);
+                if (taiKhoan == null)
+                {
+                    MessageBox.Show("Mã tài khoản không tồn tại. Vui lòng kiểm tra lại!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    txtMaTaiKhoan.Focus();
+                    return;
+                }
 
                 context.GiangViens.Add(newGiangVien);
                 context.SaveChanges();
@@ -197,6 +204,14 @@ namespace QLKH.VIEWS.DanhSach
 
                 KhoaHocContextDB context = new KhoaHocContextDB();
                 List<GiangVien> giangViens = context.GiangViens.ToList();
+
+                var taiKhoan = context.TaiKhoans.FirstOrDefault(s => s.MaTaiKhoan == txtMaTaiKhoan.Text);
+                if (taiKhoan == null)
+                {
+                    MessageBox.Show("Mã tài khoản không tồn tại. Vui lòng kiểm tra lại!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    txtMaTaiKhoan.Focus();
+                    return;
+                }
                 var giangvien = giangViens.FirstOrDefault(s => s.MaGiangVien == txtMaGiangVien.Text);
                 if (giangvien != null)
                 {
