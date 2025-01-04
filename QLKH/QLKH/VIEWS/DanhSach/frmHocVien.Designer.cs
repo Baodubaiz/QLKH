@@ -43,7 +43,7 @@
             this.txtSoDienThoai = new System.Windows.Forms.TextBox();
             this.txtNgaySinh = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.txtMaLop = new System.Windows.Forms.TextBox();
+            this.cmbLop = new System.Windows.Forms.ComboBox();
             this.label8 = new System.Windows.Forms.Label();
             this.btnXoa = new System.Windows.Forms.Button();
             this.btnLuu = new System.Windows.Forms.Button();
@@ -57,6 +57,7 @@
             this.DiaChi = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DienThoai = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Email = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnXuatDs = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvStudent)).BeginInit();
             this.SuspendLayout();
@@ -68,7 +69,7 @@
             this.label1.Location = new System.Drawing.Point(157, 32);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(82, 16);
+            this.label1.Size = new System.Drawing.Size(69, 13);
             this.label1.TabIndex = 0;
             this.label1.Text = "Mã học viên:";
             // 
@@ -79,7 +80,7 @@
             this.label2.Location = new System.Drawing.Point(415, 86);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(57, 16);
+            this.label2.Size = new System.Drawing.Size(50, 13);
             this.label2.TabIndex = 1;
             this.label2.Text = "Giới tính:";
             // 
@@ -90,7 +91,7 @@
             this.label3.Location = new System.Drawing.Point(156, 112);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(50, 16);
+            this.label3.Size = new System.Drawing.Size(43, 13);
             this.label3.TabIndex = 2;
             this.label3.Text = "Địa chỉ:";
             // 
@@ -101,7 +102,7 @@
             this.label4.Location = new System.Drawing.Point(157, 86);
             this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(70, 16);
+            this.label4.Size = new System.Drawing.Size(57, 13);
             this.label4.TabIndex = 3;
             this.label4.Text = "Ngày sinh:";
             // 
@@ -112,7 +113,7 @@
             this.label5.Location = new System.Drawing.Point(157, 58);
             this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(49, 16);
+            this.label5.Size = new System.Drawing.Size(42, 13);
             this.label5.TabIndex = 4;
             this.label5.Text = "Họ tên:";
             // 
@@ -123,7 +124,7 @@
             this.label6.Location = new System.Drawing.Point(156, 164);
             this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(69, 16);
+            this.label6.Size = new System.Drawing.Size(58, 13);
             this.label6.TabIndex = 5;
             this.label6.Text = "Điện thoại:";
             // 
@@ -134,7 +135,7 @@
             this.label7.Location = new System.Drawing.Point(157, 138);
             this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(44, 16);
+            this.label7.Size = new System.Drawing.Size(35, 13);
             this.label7.TabIndex = 6;
             this.label7.Text = "Email:";
             // 
@@ -144,7 +145,7 @@
             this.txtMaHocVien.Location = new System.Drawing.Point(241, 29);
             this.txtMaHocVien.Margin = new System.Windows.Forms.Padding(2);
             this.txtMaHocVien.Name = "txtMaHocVien";
-            this.txtMaHocVien.Size = new System.Drawing.Size(173, 22);
+            this.txtMaHocVien.Size = new System.Drawing.Size(173, 19);
             this.txtMaHocVien.TabIndex = 7;
             // 
             // txtHoTen
@@ -153,7 +154,7 @@
             this.txtHoTen.Location = new System.Drawing.Point(240, 55);
             this.txtHoTen.Margin = new System.Windows.Forms.Padding(2);
             this.txtHoTen.Name = "txtHoTen";
-            this.txtHoTen.Size = new System.Drawing.Size(341, 22);
+            this.txtHoTen.Size = new System.Drawing.Size(341, 19);
             this.txtHoTen.TabIndex = 8;
             // 
             // cmbGioiTinh
@@ -163,7 +164,7 @@
             this.cmbGioiTinh.Location = new System.Drawing.Point(476, 81);
             this.cmbGioiTinh.Margin = new System.Windows.Forms.Padding(2);
             this.cmbGioiTinh.Name = "cmbGioiTinh";
-            this.cmbGioiTinh.Size = new System.Drawing.Size(105, 24);
+            this.cmbGioiTinh.Size = new System.Drawing.Size(105, 21);
             this.cmbGioiTinh.TabIndex = 9;
             // 
             // txtDiaChi
@@ -172,7 +173,7 @@
             this.txtDiaChi.Location = new System.Drawing.Point(239, 109);
             this.txtDiaChi.Margin = new System.Windows.Forms.Padding(2);
             this.txtDiaChi.Name = "txtDiaChi";
-            this.txtDiaChi.Size = new System.Drawing.Size(341, 22);
+            this.txtDiaChi.Size = new System.Drawing.Size(341, 19);
             this.txtDiaChi.TabIndex = 10;
             // 
             // txtEmail
@@ -181,7 +182,7 @@
             this.txtEmail.Location = new System.Drawing.Point(239, 135);
             this.txtEmail.Margin = new System.Windows.Forms.Padding(2);
             this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(342, 22);
+            this.txtEmail.Size = new System.Drawing.Size(342, 19);
             this.txtEmail.TabIndex = 11;
             // 
             // txtSoDienThoai
@@ -190,7 +191,7 @@
             this.txtSoDienThoai.Location = new System.Drawing.Point(239, 161);
             this.txtSoDienThoai.Margin = new System.Windows.Forms.Padding(2);
             this.txtSoDienThoai.Name = "txtSoDienThoai";
-            this.txtSoDienThoai.Size = new System.Drawing.Size(342, 22);
+            this.txtSoDienThoai.Size = new System.Drawing.Size(342, 19);
             this.txtSoDienThoai.TabIndex = 12;
             // 
             // txtNgaySinh
@@ -199,14 +200,15 @@
             this.txtNgaySinh.Location = new System.Drawing.Point(241, 83);
             this.txtNgaySinh.Margin = new System.Windows.Forms.Padding(2);
             this.txtNgaySinh.Name = "txtNgaySinh";
-            this.txtNgaySinh.Size = new System.Drawing.Size(174, 22);
+            this.txtNgaySinh.Size = new System.Drawing.Size(174, 19);
             this.txtNgaySinh.TabIndex = 13;
             // 
             // groupBox1
             // 
             this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBox1.Controls.Add(this.txtMaLop);
+            this.groupBox1.Controls.Add(this.btnXuatDs);
+            this.groupBox1.Controls.Add(this.cmbLop);
             this.groupBox1.Controls.Add(this.label8);
             this.groupBox1.Controls.Add(this.btnXoa);
             this.groupBox1.Controls.Add(this.btnLuu);
@@ -234,14 +236,13 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Chi tiết thông tin học viên";
             // 
-            // txtMaLop
+            // cmbLop
             // 
-            this.txtMaLop.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.txtMaLop.Location = new System.Drawing.Point(476, 29);
-            this.txtMaLop.Margin = new System.Windows.Forms.Padding(2);
-            this.txtMaLop.Name = "txtMaLop";
-            this.txtMaLop.Size = new System.Drawing.Size(105, 22);
-            this.txtMaLop.TabIndex = 19;
+            this.cmbLop.FormattingEnabled = true;
+            this.cmbLop.Location = new System.Drawing.Point(476, 29);
+            this.cmbLop.Name = "cmbLop";
+            this.cmbLop.Size = new System.Drawing.Size(105, 21);
+            this.cmbLop.TabIndex = 19;
             // 
             // label8
             // 
@@ -250,7 +251,7 @@
             this.label8.Location = new System.Drawing.Point(417, 32);
             this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(51, 16);
+            this.label8.Size = new System.Drawing.Size(42, 13);
             this.label8.TabIndex = 18;
             this.label8.Text = "Mã lớp:";
             // 
@@ -362,9 +363,19 @@
             this.Email.MinimumWidth = 6;
             this.Email.Name = "Email";
             // 
+            // btnXuatDs
+            // 
+            this.btnXuatDs.Location = new System.Drawing.Point(587, 188);
+            this.btnXuatDs.Name = "btnXuatDs";
+            this.btnXuatDs.Size = new System.Drawing.Size(91, 26);
+            this.btnXuatDs.TabIndex = 20;
+            this.btnXuatDs.Text = "Xuất danh sách ";
+            this.btnXuatDs.UseVisualStyleBackColor = true;
+            this.btnXuatDs.Click += new System.EventHandler(this.btnXuatDs_Click);
+            // 
             // frmHocVien
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(841, 465);
             this.Controls.Add(this.dgvStudent);
@@ -401,7 +412,6 @@
         private System.Windows.Forms.Button btnLuu;
         private System.Windows.Forms.Button btnThem;
         private System.Windows.Forms.DataGridView dgvStudent;
-        private System.Windows.Forms.TextBox txtMaLop;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.DataGridViewTextBoxColumn HocVien;
         private System.Windows.Forms.DataGridViewTextBoxColumn MaLop;
@@ -411,5 +421,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn DiaChi;
         private System.Windows.Forms.DataGridViewTextBoxColumn DienThoai;
         private System.Windows.Forms.DataGridViewTextBoxColumn Email;
+        private System.Windows.Forms.ComboBox cmbLop;
+        private System.Windows.Forms.Button btnXuatDs;
     }
 }

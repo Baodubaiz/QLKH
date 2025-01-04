@@ -48,12 +48,14 @@
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnXuatDs = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDsGiangVien)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.btnXuatDs);
             this.groupBox1.Controls.Add(this.txtMaTaiKhoan);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.btnSuaGV);
@@ -241,6 +243,16 @@
             this.Column5.HeaderText = "Mã tài khoản";
             this.Column5.Name = "Column5";
             // 
+            // btnXuatDs
+            // 
+            this.btnXuatDs.Location = new System.Drawing.Point(691, 234);
+            this.btnXuatDs.Name = "btnXuatDs";
+            this.btnXuatDs.Size = new System.Drawing.Size(127, 23);
+            this.btnXuatDs.TabIndex = 17;
+            this.btnXuatDs.Text = "Xuất danh sách";
+            this.btnXuatDs.UseVisualStyleBackColor = true;
+            this.btnXuatDs.Click += new System.EventHandler(this.btnXuatDs_Click);
+            // 
             // frmGiangVien
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -280,5 +292,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
+        private System.Windows.Forms.Button btnXuatDs;
     }
 }

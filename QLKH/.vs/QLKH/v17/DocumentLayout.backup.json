@@ -3,16 +3,12 @@
   "WorkspaceRootPath": "E:\\\u0110\u1ED3 \u00E1n winform\\QLKH_master\\QLKH\\QLKH\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{C6454C5A-1E9E-4EBF-8D2B-7836ABF10AD2}|QLKH\\QLKH.csproj|e:\\\u0111\u1ED3 \u00E1n winform\\qlkh_master\\qlkh\\qlkh\\qlkh\\views\\danhsach\\frmchitiet.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C6454C5A-1E9E-4EBF-8D2B-7836ABF10AD2}|QLKH\\QLKH.csproj|solutionrelative:qlkh\\views\\danhsach\\frmchitiet.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{C6454C5A-1E9E-4EBF-8D2B-7836ABF10AD2}|QLKH\\QLKH.csproj|e:\\\u0111\u1ED3 \u00E1n winform\\qlkh_master\\qlkh\\qlkh\\qlkh\\views\\danhsach\\frmnhanvien.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C6454C5A-1E9E-4EBF-8D2B-7836ABF10AD2}|QLKH\\QLKH.csproj|solutionrelative:qlkh\\views\\danhsach\\frmnhanvien.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C6454C5A-1E9E-4EBF-8D2B-7836ABF10AD2}|QLKH\\QLKH.csproj|e:\\\u0111\u1ED3 \u00E1n winform\\qlkh_master\\qlkh\\qlkh\\qlkh\\views\\danhsach\\frmlophoc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C6454C5A-1E9E-4EBF-8D2B-7836ABF10AD2}|QLKH\\QLKH.csproj|solutionrelative:qlkh\\views\\danhsach\\frmlophoc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C6454C5A-1E9E-4EBF-8D2B-7836ABF10AD2}|QLKH\\QLKH.csproj|e:\\\u0111\u1ED3 \u00E1n winform\\qlkh_master\\qlkh\\qlkh\\qlkh\\views\\danhsach\\frmlophoc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{C6454C5A-1E9E-4EBF-8D2B-7836ABF10AD2}|QLKH\\QLKH.csproj|solutionrelative:qlkh\\views\\danhsach\\frmlophoc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{C6454C5A-1E9E-4EBF-8D2B-7836ABF10AD2}|QLKH\\QLKH.csproj|e:\\\u0111\u1ED3 \u00E1n winform\\qlkh_master\\qlkh\\qlkh\\qlkh\\views\\danhsach\\frmnhanvien.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{C6454C5A-1E9E-4EBF-8D2B-7836ABF10AD2}|QLKH\\QLKH.csproj|solutionrelative:qlkh\\views\\danhsach\\frmnhanvien.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
       "AbsoluteMoniker": "D:0:0:{C6454C5A-1E9E-4EBF-8D2B-7836ABF10AD2}|QLKH\\QLKH.csproj|E:\\\u0110\u1ED3 \u00E1n winform\\QLKH_master\\QLKH\\QLKH\\qlkh\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -26,55 +22,42 @@
       "DocumentGroups": [
         {
           "DockedWidth": 1255,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "frmLopHoc.cs",
-              "DocumentMoniker": "E:\\\u0110\u1ED3 \u00E1n winform\\QLKH_master\\QLKH\\QLKH\\QLKH\\VIEWS\\DanhSach\\frmLopHoc.cs",
-              "RelativeDocumentMoniker": "QLKH\\VIEWS\\DanhSach\\frmLopHoc.cs",
-              "ToolTip": "E:\\\u0110\u1ED3 \u00E1n winform\\QLKH_master\\QLKH\\QLKH\\QLKH\\VIEWS\\DanhSach\\frmLopHoc.cs*",
-              "RelativeToolTip": "QLKH\\VIEWS\\DanhSach\\frmLopHoc.cs*",
-              "ViewState": "AgIAACYAAAAAAAAAAIA3wEEAAABAAAAAAAAAAA==",
+              "DocumentIndex": 0,
+              "Title": "frmNhanVien.cs",
+              "DocumentMoniker": "E:\\\u0110\u1ED3 \u00E1n winform\\QLKH_master\\QLKH\\QLKH\\QLKH\\VIEWS\\DanhSach\\frmNhanVien.cs",
+              "RelativeDocumentMoniker": "QLKH\\VIEWS\\DanhSach\\frmNhanVien.cs",
+              "ToolTip": "E:\\\u0110\u1ED3 \u00E1n winform\\QLKH_master\\QLKH\\QLKH\\QLKH\\VIEWS\\DanhSach\\frmNhanVien.cs",
+              "RelativeToolTip": "QLKH\\VIEWS\\DanhSach\\frmNhanVien.cs",
+              "ViewState": "AgIAABMBAAAAAAAAAAAwwCoBAAAoAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-03T16:44:18.776Z",
+              "WhenOpened": "2025-01-04T03:45:25.927Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "frmLopHoc.cs [Design]",
-              "DocumentMoniker": "E:\\\u0110\u1ED3 \u00E1n winform\\QLKH_master\\QLKH\\QLKH\\QLKH\\VIEWS\\DanhSach\\frmLopHoc.cs",
-              "RelativeDocumentMoniker": "QLKH\\VIEWS\\DanhSach\\frmLopHoc.cs",
-              "ToolTip": "E:\\\u0110\u1ED3 \u00E1n winform\\QLKH_master\\QLKH\\QLKH\\QLKH\\VIEWS\\DanhSach\\frmLopHoc.cs [Design]*",
-              "RelativeToolTip": "QLKH\\VIEWS\\DanhSach\\frmLopHoc.cs [Design]*",
+              "DocumentIndex": 1,
+              "Title": "frmNhanVien.cs [Design]",
+              "DocumentMoniker": "E:\\\u0110\u1ED3 \u00E1n winform\\QLKH_master\\QLKH\\QLKH\\QLKH\\VIEWS\\DanhSach\\frmNhanVien.cs",
+              "RelativeDocumentMoniker": "QLKH\\VIEWS\\DanhSach\\frmNhanVien.cs",
+              "ToolTip": "E:\\\u0110\u1ED3 \u00E1n winform\\QLKH_master\\QLKH\\QLKH\\QLKH\\VIEWS\\DanhSach\\frmNhanVien.cs [Design]",
+              "RelativeToolTip": "QLKH\\VIEWS\\DanhSach\\frmNhanVien.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-03T16:44:16.845Z",
+              "WhenOpened": "2025-01-04T03:44:51.102Z",
               "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "frmChiTiet.cs",
-              "DocumentMoniker": "E:\\\u0110\u1ED3 \u00E1n winform\\QLKH_master\\QLKH\\QLKH\\QLKH\\VIEWS\\DanhSach\\frmChiTiet.cs",
-              "RelativeDocumentMoniker": "QLKH\\VIEWS\\DanhSach\\frmChiTiet.cs",
-              "ToolTip": "E:\\\u0110\u1ED3 \u00E1n winform\\QLKH_master\\QLKH\\QLKH\\QLKH\\VIEWS\\DanhSach\\frmChiTiet.cs*",
-              "RelativeToolTip": "QLKH\\VIEWS\\DanhSach\\frmChiTiet.cs*",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAQAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-03T16:43:57.43Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 2,
               "Title": "Program.cs",
               "DocumentMoniker": "E:\\\u0110\u1ED3 \u00E1n winform\\QLKH_master\\QLKH\\QLKH\\QLKH\\Program.cs",
               "RelativeDocumentMoniker": "QLKH\\Program.cs",
               "ToolTip": "E:\\\u0110\u1ED3 \u00E1n winform\\QLKH_master\\QLKH\\QLKH\\QLKH\\Program.cs",
               "RelativeToolTip": "QLKH\\Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAtAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAApAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-01-03T12:50:37.692Z",
               "EditorCaption": ""

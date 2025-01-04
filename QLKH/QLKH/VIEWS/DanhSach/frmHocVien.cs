@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using QLKH.MODEL;
+using QLKH.Report;
 
 namespace QLKH.VIEWS.DanhSach
 {
@@ -24,7 +25,7 @@ namespace QLKH.VIEWS.DanhSach
             {
                 int index = dgvStudent.Rows.Add();
                 dgvStudent.Rows[index].Cells[0].Value = item.MaHocVien;
-                dgvStudent.Rows[index].Cells[1].Value = item.MaLop; // Hiển thị mã lớp
+                dgvStudent.Rows[index].Cells[1].Value = item.LopHoc.MaLop; // Hiển thị mã lớp
                 dgvStudent.Rows[index].Cells[2].Value = item.HoTen;
                 dgvStudent.Rows[index].Cells[3].Value = item.GioiTinh;
                 dgvStudent.Rows[index].Cells[4].Value = item.NgaySinh;
@@ -35,12 +36,31 @@ namespace QLKH.VIEWS.DanhSach
             }
         }
 
+        private void LoadLopHocComboBox()
+        {
+            try
+            {
+                KhoaHocContextDB context = new KhoaHocContextDB();
+                var lopHocs = context.LopHocs.ToList();
+
+                cmbLop.DataSource = lopHocs;
+                cmbLop.DisplayMember = "MaLop"; // Thuộc tính hiển thị
+                cmbLop.ValueMember = "MaLop"; // Thuộc tính giá trị
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Lỗi khi tải dữ liệu giảng viên: {ex.Message}", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
         private void frmHocVien_Load(object sender, EventArgs e)
         {
             try
             {
                 KhoaHocContextDB context = new KhoaHocContextDB();
-                List<HocVien> listStudent = context.HocViens.ToList(); //lấy sinh viên
+                List<LopHoc> lopHocs = context.LopHocs.ToList();
+                List<HocVien> listStudent = context.HocViens.ToList();
+                LoadLopHocComboBox();
                 BindGrid(listStudent);
             }
             catch (Exception ex)
@@ -66,7 +86,6 @@ namespace QLKH.VIEWS.DanhSach
             {
                 // Kiểm tra các textbox có giá trị không
                 if (string.IsNullOrEmpty(txtMaHocVien.Text) ||
-                    string.IsNullOrEmpty(txtMaLop.Text) ||
                     string.IsNullOrEmpty(txtHoTen.Text) ||
                     string.IsNullOrEmpty(txtNgaySinh.Text) ||
                     string.IsNullOrEmpty(txtSoDienThoai.Text) ||
@@ -98,7 +117,7 @@ namespace QLKH.VIEWS.DanhSach
                 var newStudent = new HocVien
                 {
                     MaHocVien = txtMaHocVien.Text,
-                    MaLop = txtMaLop.Text,
+                    MaLop = cmbLop.SelectedValue.ToString(),
                     HoTen = txtHoTen.Text,
                     NgaySinh = txtNgaySinh.Text,
                     GioiTinh = cmbGioiTinh.SelectedValue.ToString(),
@@ -107,12 +126,6 @@ namespace QLKH.VIEWS.DanhSach
                     DiaChi = txtDiaChi.Text,
                 };
 
-                var classExists = context.LopHocs.Any(l => l.MaLop == txtMaLop.Text);
-                if (!classExists)
-                {
-                    MessageBox.Show("Mã lớp không hợp lệ. Vui lòng kiểm tra lại.");
-                    return;
-                }
 
                 // Thêm học viên mới vào danh sách
                 context.HocViens.Add(newStudent);
@@ -150,7 +163,7 @@ namespace QLKH.VIEWS.DanhSach
 
                 // Hiển thị dữ liệu từ hàng được chọn lên các TextBox
                 txtMaHocVien.Text = selectedRow.Cells["HocVien"].Value.ToString();
-                txtMaLop.Text = selectedRow.Cells["MaLop"].Value.ToString();
+                cmbLop.Text = selectedRow.Cells["MaLop"].Value.ToString();
                 txtHoTen.Text = selectedRow.Cells["HoTen"].Value.ToString();
                 cmbGioiTinh.Text = selectedRow.Cells["GioiTinh"].Value.ToString();
                 txtNgaySinh.Text = selectedRow.Cells["NgaySinh"].Value.ToString();
@@ -183,8 +196,7 @@ namespace QLKH.VIEWS.DanhSach
                     }
 
                     // Kiểm tra các trường thông tin khác
-                    if (string.IsNullOrEmpty(txtMaLop.Text) ||
-                        string.IsNullOrEmpty(txtHoTen.Text) ||
+                    if (string.IsNullOrEmpty(txtHoTen.Text) ||
                         string.IsNullOrEmpty(txtNgaySinh.Text) ||
                         string.IsNullOrEmpty(txtSoDienThoai.Text) ||
                         string.IsNullOrEmpty(txtEmail.Text) ||
@@ -196,7 +208,7 @@ namespace QLKH.VIEWS.DanhSach
                     }
 
                     // Cập nhật thông tin học viên
-                    student.MaLop = txtMaLop.Text;
+                    student.MaLop = cmbLop.SelectedValue.ToString();
                     student.HoTen = txtHoTen.Text;
                     student.GioiTinh = cmbGioiTinh.SelectedValue.ToString();
                     student.NgaySinh = txtNgaySinh.Text;
@@ -204,15 +216,6 @@ namespace QLKH.VIEWS.DanhSach
                     student.SoDienThoai = txtSoDienThoai.Text;
                     student.Email = txtEmail.Text;
 
-                    // Kiểm tra mã lớp có tồn tại
-                    var classExists = context.LopHocs.Any(l => l.MaLop == txtMaLop.Text);
-                    if (!classExists)
-                    {
-                        MessageBox.Show("Mã lớp không hợp lệ. Vui lòng kiểm tra lại.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                        return;
-                    }
-
-                    // Lưu thay đổi vào cơ sở dữ liệu
                     context.SaveChanges();
 
                     // Tải lại dữ liệu lên DataGridView
@@ -275,6 +278,10 @@ namespace QLKH.VIEWS.DanhSach
             }
         }
 
-        
+        private void btnXuatDs_Click(object sender, EventArgs e)
+        {
+            ReportHocVien hocVien = new ReportHocVien();
+            hocVien.ShowDialog();
+        }
     }
 }

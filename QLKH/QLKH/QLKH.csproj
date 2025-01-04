@@ -39,6 +39,24 @@
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1652.0\lib\net40\Microsoft.ReportViewer.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.DataVisualization, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1652.0\lib\net40\Microsoft.ReportViewer.DataVisualization.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Design, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1652.0\lib\net40\Microsoft.ReportViewer.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1652.0\lib\net40\Microsoft.ReportViewer.ProcessingObjectModel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1652.0\lib\net40\Microsoft.ReportViewer.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Types, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.SqlServer.Types.14.0.314.76\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
@@ -64,6 +82,7 @@
     <Compile Include="MODEL\TaiKhoan.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SqlServerTypes\Loader.cs" />
     <Compile Include="VIEWS\DanhSach\frmChiTiet.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -112,6 +131,34 @@
     <Compile Include="VIEWS\frmLogin.Designer.cs">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </Compile>
+    <Compile Include="VIEWS\REPORT\ReportGiangVien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VIEWS\REPORT\ReportGiangVien.Designer.cs">
+      <DependentUpon>ReportGiangVien.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VIEWS\REPORT\ReportHocVien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VIEWS\REPORT\ReportHocVien.Designer.cs">
+      <DependentUpon>ReportHocVien.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VIEWS\REPORT\ReportKhoaHoc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VIEWS\REPORT\ReportKhoaHoc.Designer.cs">
+      <DependentUpon>ReportKhoaHoc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VIEWS\REPORT\ReportNhanVien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VIEWS\REPORT\ReportNhanVien.Designer.cs">
+      <DependentUpon>ReportNhanVien.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VIEWS\REPORT\RPGiangVien.cs" />
+    <Compile Include="VIEWS\REPORT\RPHocVien.cs" />
+    <Compile Include="VIEWS\REPORT\RPKhoaHoc.cs" />
+    <Compile Include="VIEWS\REPORT\RPNhanVien.cs" />
     <Compile Include="VIEWS\TrangChu\AdminView.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -163,6 +210,22 @@
     <EmbeddedResource Include="VIEWS\frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="VIEWS\REPORT\ReportGiangVien.resx">
+      <DependentUpon>ReportGiangVien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VIEWS\REPORT\ReportHocVien.resx">
+      <DependentUpon>ReportHocVien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VIEWS\REPORT\ReportKhoaHoc.resx">
+      <DependentUpon>ReportKhoaHoc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VIEWS\REPORT\ReportNhanVien.resx">
+      <DependentUpon>ReportNhanVien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VIEWS\REPORT\RPGiangVien.rdlc" />
+    <EmbeddedResource Include="VIEWS\REPORT\RPHocVien.rdlc" />
+    <EmbeddedResource Include="VIEWS\REPORT\RPKhoaHoc.rdlc" />
+    <EmbeddedResource Include="VIEWS\REPORT\RPNhanVien.rdlc" />
     <EmbeddedResource Include="VIEWS\TrangChu\AdminView.resx">
       <DependentUpon>AdminView.cs</DependentUpon>
     </EmbeddedResource>
@@ -188,6 +251,19 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
+    <Content Include="SqlServerTypes\readme.htm" />
+    <Content Include="SqlServerTypes\x64\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x64\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="VIEWS\VIEWS.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

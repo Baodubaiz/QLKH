@@ -34,6 +34,7 @@
             this.txtPassword = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.btnThoat = new System.Windows.Forms.Button();
+            this.lblHienMatKhau = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -71,6 +72,7 @@
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(127, 20);
             this.txtPassword.TabIndex = 3;
+            this.txtPassword.UseSystemPasswordChar = true;
             // 
             // button1
             // 
@@ -93,11 +95,22 @@
             this.btnThoat.UseVisualStyleBackColor = true;
             this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
             // 
+            // lblHienMatKhau
+            // 
+            this.lblHienMatKhau.AutoSize = true;
+            this.lblHienMatKhau.Location = new System.Drawing.Point(363, 129);
+            this.lblHienMatKhau.Name = "lblHienMatKhau";
+            this.lblHienMatKhau.Size = new System.Drawing.Size(29, 13);
+            this.lblHienMatKhau.TabIndex = 6;
+            this.lblHienMatKhau.Text = "Hiện";
+            this.lblHienMatKhau.Click += new System.EventHandler(this.lblHienMatKhau_Click);
+            // 
             // frmLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(600, 366);
+            this.Controls.Add(this.lblHienMatKhau);
             this.Controls.Add(this.btnThoat);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.txtPassword);
@@ -121,5 +134,6 @@
         private System.Windows.Forms.TextBox txtPassword;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button btnThoat;
+        private System.Windows.Forms.Label lblHienMatKhau;
     }
 }

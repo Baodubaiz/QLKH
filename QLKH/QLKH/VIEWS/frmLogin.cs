@@ -107,6 +107,22 @@ namespace QLKH
         {
 
         }
+
+        private void lblHienMatKhau_Click(object sender, EventArgs e)
+        {
+            if (txtPassword.UseSystemPasswordChar)
+            {
+                // Nếu đang ẩn mật khẩu, chuyển sang hiện mật khẩu
+                txtPassword.UseSystemPasswordChar = false;
+                lblHienMatKhau.Text = "Ẩn"; // Thay đổi văn bản nút thành "Ẩn"
+            }
+            else
+            {
+                // Nếu đang hiện mật khẩu, chuyển sang ẩn mật khẩu
+                txtPassword.UseSystemPasswordChar = true;
+                lblHienMatKhau.Text = "Hiện"; // Thay đổi văn bản nút thành "Hiện"
+            }
+        }
     }
     
 }

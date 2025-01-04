@@ -45,7 +45,7 @@ namespace QLKH.VIEWS.TrangChu
 
         private void btnLopHoc_Click(object sender, EventArgs e)
         {
-            openChildForm(new frmNhanVien());
+            openChildForm(new frmLopHoc());
         }
 
         private void btnGiangVien_Click(object sender, EventArgs e)
@@ -55,7 +55,7 @@ namespace QLKH.VIEWS.TrangChu
 
         private void btnHocVien_Click(object sender, EventArgs e)
         {
-            openChildForm(new frmKhoaHoc());
+            openChildForm(new frmHocVien());
         }
 
         private void btnDangXuat_Click(object sender, EventArgs e)

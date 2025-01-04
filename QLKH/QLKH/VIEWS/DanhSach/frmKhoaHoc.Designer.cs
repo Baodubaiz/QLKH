@@ -51,6 +51,7 @@
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.khoaHocBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.khoaHocBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.btnXuatDs = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDanhSach)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.khoaHocBindingSource1)).BeginInit();
@@ -59,6 +60,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.btnXuatDs);
             this.groupBox1.Controls.Add(this.cmbGiangVien);
             this.groupBox1.Controls.Add(this.btnThem);
             this.groupBox1.Controls.Add(this.btnXoa);
@@ -91,7 +93,7 @@
             // 
             // btnThem
             // 
-            this.btnThem.Location = new System.Drawing.Point(477, 171);
+            this.btnThem.Location = new System.Drawing.Point(397, 170);
             this.btnThem.Margin = new System.Windows.Forms.Padding(2);
             this.btnThem.Name = "btnThem";
             this.btnThem.Size = new System.Drawing.Size(72, 27);
@@ -102,7 +104,7 @@
             // 
             // btnXoa
             // 
-            this.btnXoa.Location = new System.Drawing.Point(668, 171);
+            this.btnXoa.Location = new System.Drawing.Point(588, 170);
             this.btnXoa.Margin = new System.Windows.Forms.Padding(2);
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.Size = new System.Drawing.Size(74, 27);
@@ -113,7 +115,7 @@
             // 
             // btnSua
             // 
-            this.btnSua.Location = new System.Drawing.Point(571, 171);
+            this.btnSua.Location = new System.Drawing.Point(491, 170);
             this.btnSua.Margin = new System.Windows.Forms.Padding(2);
             this.btnSua.Name = "btnSua";
             this.btnSua.Size = new System.Drawing.Size(78, 27);
@@ -265,6 +267,17 @@
             // 
             this.khoaHocBindingSource.DataMember = "KhoaHoc";
             // 
+            // btnXuatDs
+            // 
+            this.btnXuatDs.Location = new System.Drawing.Point(680, 170);
+            this.btnXuatDs.Margin = new System.Windows.Forms.Padding(2);
+            this.btnXuatDs.Name = "btnXuatDs";
+            this.btnXuatDs.Size = new System.Drawing.Size(102, 27);
+            this.btnXuatDs.TabIndex = 4;
+            this.btnXuatDs.Text = "Xuất danh sách";
+            this.btnXuatDs.UseVisualStyleBackColor = true;
+            this.btnXuatDs.Click += new System.EventHandler(this.btnXuatDs_Click);
+            // 
             // frmKhoaHoc
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -314,5 +327,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
         private System.Windows.Forms.ComboBox cmbGiangVien;
+        private System.Windows.Forms.Button btnXuatDs;
     }
 }

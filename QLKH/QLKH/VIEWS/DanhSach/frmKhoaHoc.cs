@@ -13,6 +13,7 @@ using System.Data.SqlClient;
 
 using QLKH.MODEL;
 using System.Data.Entity.Core.Common.CommandTrees.ExpressionBuilder;
+using QLKH.Report;
 
 namespace QLKH.VIEWS.NhanVien
 {
@@ -284,8 +285,10 @@ namespace QLKH.VIEWS.NhanVien
             }
         }
 
-        
-
-        
+        private void btnXuatDs_Click(object sender, EventArgs e)
+        {
+            ReportKhoaHoc reportKhoaHoc = new ReportKhoaHoc();
+            reportKhoaHoc.ShowDialog();
+        }
     }
 }

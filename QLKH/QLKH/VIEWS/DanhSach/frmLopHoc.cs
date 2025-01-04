@@ -27,8 +27,8 @@ namespace QLKH
             {
                 int index = dgvLopHoc.Rows.Add();
                 dgvLopHoc.Rows[index].Cells[0].Value = item.MaLop;
-                dgvLopHoc.Rows[index].Cells[1].Value = item.MaKhoaHoc; 
-                dgvLopHoc.Rows[index].Cells[2].Value = item.MaGiangVien;
+                dgvLopHoc.Rows[index].Cells[1].Value = item.KhoaHoc.MaKhoaHoc; 
+                dgvLopHoc.Rows[index].Cells[2].Value = item.GiangVien.HoTen;
                 dgvLopHoc.Rows[index].Cells[3].Value = item.TenLop;
                 dgvLopHoc.Rows[index].Cells[4].Value = item.NgayBatDau;
                 dgvLopHoc.Rows[index].Cells[5].Value = item.NgayKetThuc;
@@ -36,12 +36,51 @@ namespace QLKH
 
             }
         }
+
+        private void LoadLopHocComboBox()
+        {
+            try
+            {
+                KhoaHocContextDB context = new KhoaHocContextDB();
+                var giangVienList = context.GiangViens.ToList();
+
+                cmbGiangVien.DataSource = giangVienList;
+                cmbGiangVien.DisplayMember = "HoTen"; 
+                cmbGiangVien.ValueMember = "MaGiangVien"; 
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Lỗi khi tải dữ liệu giảng viên: {ex.Message}", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void LoadKhoaHocComboBox()
+        {
+            try
+            {
+                KhoaHocContextDB context = new KhoaHocContextDB();
+                var khoaHocs = context.KhoaHocs.ToList();
+
+                cmbMaKhoaHoc.DataSource = khoaHocs;
+                cmbMaKhoaHoc.DisplayMember = "MaKhoaHoc";
+                cmbMaKhoaHoc.ValueMember = "MaKhoaHoc";
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Lỗi khi tải dữ liệu giảng viên: {ex.Message}", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
         private void Classes_Load(object sender, EventArgs e)
         {
             try
             {
                 KhoaHocContextDB context = new KhoaHocContextDB();
+                List<GiangVien> giangViens = new List<GiangVien>();
+                List<KhoaHoc> khoaHocs = new List<KhoaHoc>();
                 List<LopHoc> listLopHoc = context.LopHocs.ToList(); //lấy sinh viên
+                LoadLopHocComboBox();
+                LoadKhoaHocComboBox();
                 BindGrid(listLopHoc);
             }
             catch (Exception ex)
@@ -78,8 +117,6 @@ namespace QLKH
             {
                 // Kiểm tra các textbox có giá trị không
                 if (string.IsNullOrEmpty(txtMaLop.Text) ||
-                    string.IsNullOrEmpty(txtMaKhoa.Text) ||
-                    string.IsNullOrEmpty(txtMaGiangVien.Text) ||
                     string.IsNullOrEmpty(txtTenLopHoc.Text) ||
                     string.IsNullOrEmpty(txtNgayBatDau.Text) ||
                     string.IsNullOrEmpty(txtNgayKetThuc.Text) ||
@@ -92,22 +129,7 @@ namespace QLKH
                 // Kết nối đến cơ sở dữ liệu
                 using (KhoaHocContextDB context = new KhoaHocContextDB())
                 {
-                    // Kiểm tra sự tồn tại của mã khóa học
-                    bool isMaKhoaHocValid = context.KhoaHocs.Any(kh => kh.MaKhoaHoc == txtMaKhoa.Text);
-                    if (!isMaKhoaHocValid)
-                    {
-                        MessageBox.Show("Mã Khóa Học không hợp lệ. Vui lòng kiểm tra lại.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                        return;
-                    }
-
-                    // Kiểm tra sự tồn tại của mã giảng viên
-                    bool isMaGiangVienValid = context.GiangViens.Any(gv => gv.MaGiangVien == txtMaGiangVien.Text);
-                    if (!isMaGiangVienValid)
-                    {
-                        MessageBox.Show("Mã Giảng Viên không hợp lệ. Vui lòng kiểm tra lại.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                        return;
-                    }
-
+                   
                     // Kiểm tra mã lớp đã tồn tại hay chưa
                     if (context.LopHocs.Any(s => s.MaLop == txtMaLop.Text))
                     {
@@ -119,8 +141,8 @@ namespace QLKH
                     var newLopHoc = new LopHoc
                     {
                         MaLop = txtMaLop.Text,
-                        MaKhoaHoc = txtMaKhoa.Text,
-                        MaGiangVien = txtMaGiangVien.Text,
+                        MaKhoaHoc = cmbMaKhoaHoc.SelectedValue.ToString(),
+                        MaGiangVien = cmbGiangVien.SelectedValue.ToString(),
                         TenLop = txtTenLopHoc.Text,
                         NgayBatDau = txtNgayBatDau.Text,
                         NgayKetThuc = txtNgayKetThuc.Text,
@@ -164,8 +186,8 @@ namespace QLKH
 
                 // Hiển thị dữ liệu từ hàng được chọn lên các TextBox
                 txtMaLop.Text = selectedRow.Cells["Column1"].Value.ToString();
-                txtMaKhoa.Text = selectedRow.Cells["Column6"].Value.ToString();
-                txtMaGiangVien.Text = selectedRow.Cells["Column7"].Value.ToString();
+                cmbMaKhoaHoc.Text = selectedRow.Cells["Column6"].Value.ToString();
+                cmbGiangVien.Text = selectedRow.Cells["Column7"].Value.ToString();
                 txtTenLopHoc.Text = selectedRow.Cells["Column2"].Value.ToString();
                 txtNgayBatDau.Text = selectedRow.Cells["Column3"].Value.ToString();
                 txtNgayKetThuc.Text = selectedRow.Cells["Column4"].Value.ToString();
@@ -179,8 +201,6 @@ namespace QLKH
             {
                 // Kiểm tra các textbox có giá trị không
                 if (string.IsNullOrEmpty(txtMaLop.Text) ||
-                    string.IsNullOrEmpty(txtMaKhoa.Text) ||
-                    string.IsNullOrEmpty(txtMaGiangVien.Text) ||
                     string.IsNullOrEmpty(txtTenLopHoc.Text) ||
                     string.IsNullOrEmpty(txtNgayBatDau.Text) ||
                     string.IsNullOrEmpty(txtNgayKetThuc.Text) ||
@@ -201,25 +221,10 @@ namespace QLKH
                         return;
                     }
 
-                    // Kiểm tra sự tồn tại của mã khóa học
-                    bool isMaKhoaHocValid = context.KhoaHocs.Any(kh => kh.MaKhoaHoc == txtMaKhoa.Text);
-                    if (!isMaKhoaHocValid)
-                    {
-                        MessageBox.Show("Mã Khóa Học không hợp lệ. Vui lòng kiểm tra lại.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                        return;
-                    }
-
-                    // Kiểm tra sự tồn tại của mã giảng viên
-                    bool isMaGiangVienValid = context.GiangViens.Any(gv => gv.MaGiangVien == txtMaGiangVien.Text);
-                    if (!isMaGiangVienValid)
-                    {
-                        MessageBox.Show("Mã Giảng Viên không hợp lệ. Vui lòng kiểm tra lại.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                        return;
-                    }
 
                     // Cập nhật thông tin lớp học
-                    lopHoc.MaKhoaHoc = txtMaKhoa.Text;
-                    lopHoc.MaGiangVien = txtMaGiangVien.Text;
+                    lopHoc.MaKhoaHoc = cmbMaKhoaHoc.SelectedValue.ToString();
+                    lopHoc.MaGiangVien = cmbGiangVien.SelectedValue.ToString();
                     lopHoc.TenLop = txtTenLopHoc.Text;
                     lopHoc.NgayBatDau = txtNgayBatDau.Text;
                     lopHoc.NgayKetThuc = txtNgayKetThuc.Text;

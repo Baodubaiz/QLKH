@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using QLKH.MODEL;
+using QLKH.Report;
 
 namespace QLKH.VIEWS.DanhSach
 {
@@ -283,6 +284,12 @@ namespace QLKH.VIEWS.DanhSach
         private void txtMaGiangVien_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnXuatDs_Click(object sender, EventArgs e)
+        {
+            ReportGiangVien giangVien = new ReportGiangVien();
+            giangVien.ShowDialog();
         }
     }
 
